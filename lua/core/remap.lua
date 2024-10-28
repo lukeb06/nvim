@@ -146,21 +146,5 @@ end
 vim.api.nvim_set_keymap('n', '<leader>h', ':lua OpenMenu()<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>", function()
-    print("p - Project; t - Tree; g - Git; e - Harpoon; a - Add to Harpoon; sa - Select All; ya - Yank All; f - Format; ca - Copy All")
-end)
-
-vim.keymap.set("n", "<leader>p", function()
-    print("pf - Find File; ps - Search (grep); pv - View")
-end)
-
-vim.keymap.set("n", "<leader>t", function()
-    print("tt - Toggle; tf - Focus")
-end)
-
-vim.keymap.set("n", "<leader>f", function()
-    print("fa - All; fb - Block")
-end)
-
-vim.keymap.set("n", "<leader>g", function()
-    print("gs - Status; ga - Add; gc - Commit; gp - Push; gf - Fugitive")
+    print("<leader>h for help")
 end)
