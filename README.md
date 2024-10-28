@@ -16,7 +16,6 @@ git clone https://github.com/lukeb06/nvim.git ~/.config/nvim --depth=1
 -   [Mason](https://github.com/williamboman/mason.nvim) package manager
 -   [Harpoon](https://github.com/theprimeagen/harpoon) bookmarks
 -   [Gitsigns](https://github.com/lewis6991/gitsigns.nvim) git status
--   [LuaSnip](https://github.com/L3MON4D3/
 -   [Resession](https://github.com/stevearc/resession.nvim) session management
 -   [Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator) tmux navigation
 -   [WhichKey](https://github.com/folke/which-key.nvim) keymappings
