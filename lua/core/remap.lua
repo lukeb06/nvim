@@ -30,3 +30,7 @@ vim.keymap.set("n", "<leader>ga", vim.cmd.Gadd, {desc = "Git Add"})
 vim.keymap.set("n", "<leader>gc", vim.cmd.Gcommit, {desc = "Git Commit"})
 -- Git Push
 vim.keymap.set("n", "<leader>gp", vim.cmd.Gpush, {desc = "Git Push"})
+
+
+-- Docker Compose
+vim.keymap.set("n", "<leader>dc", ":VimuxRunCommand \"docker compose up --build\" <CR>", {desc = "Docker Compose Up"})
