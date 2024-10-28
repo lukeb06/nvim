@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/VonHeikemen/my-neovim-config.git ~/.config/nvim --depth=1
+git clone https://github.com/lukeb06/nvim.git ~/.config/nvim --depth=1
 ```
 
 ## Features
