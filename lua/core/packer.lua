@@ -74,4 +74,5 @@ return require('packer').startup(function(use)
     use "stevearc/resession.nvim"
     use "christoomey/vim-tmux-navigator"
     use "folke/which-key.nvim"
+    use "preservim/vimux"
 end)

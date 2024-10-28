@@ -180,6 +180,11 @@ _G.packer_plugins = {
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
   },
+  vimux = {
+    loaded = true,
+    path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/vimux",
+    url = "https://github.com/preservim/vimux"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/which-key.nvim",
