@@ -81,4 +81,6 @@ return require('packer').startup(function(use)
     }
 
     use "christoomey/vim-tmux-navigator"
+
+    use "folke/which-key.nvim"
 end)
