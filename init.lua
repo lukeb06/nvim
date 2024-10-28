@@ -24,3 +24,4 @@ vim.opt.incsearch = true
 vim.opt.updatetime = 50
 
 vim.opt.showmode = false
+vim.opt.laststatus = 0
