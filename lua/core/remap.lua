@@ -34,3 +34,12 @@ vim.keymap.set("n", "<leader>gp", vim.cmd.Gpush, {desc = "Git Push"})
 
 -- Docker Compose
 vim.keymap.set("n", "<leader>dc", ":VimuxRunCommand \"docker compose up --build\" <CR>", {desc = "Docker Compose Up"})
+
+
+
+-- Terminal Keymaps
+--------------------------------------------------------------------------------
+
+vim.keymap.set("n", "<leader>jv", ":VimuxOpenRunner<CR>", {desc="Open Vimux Pane"})
+vim.keymap.set("n", "<leader>jr", ":VimuxPromptCommand<CR>", {desc="Run Command"})
+vim.keymap.set("n", "<leader>jb", ":VimuxRunCommand \"bun dev\" <CR>", {desc="Bun Dev"})

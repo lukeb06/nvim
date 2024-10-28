@@ -75,4 +75,6 @@ return require('packer').startup(function(use)
     use "christoomey/vim-tmux-navigator"
     use "folke/which-key.nvim"
     use "preservim/vimux"
+
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 end)
