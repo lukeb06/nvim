@@ -181,14 +181,14 @@ ins_left {
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.magenta, gui = 'bold' },
+  color = { fg = colors.fg, gui = 'bold' },
 }
 
 -- Add components to right sections
 ins_right {
   'filetype',
   icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { gui = 'bold' },
+  color = { fg = colors.fg, gui = 'bold' },
 }
 
 ins_right {
