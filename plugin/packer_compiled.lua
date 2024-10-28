@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/abyss.nvim",
     url = "https://github.com/barrientosvctor/abyss.nvim"
   },
-  ["barbar.nvim"] = {
-    loaded = true,
-    path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/barbar.nvim",
-    url = "https://github.com/romgrk/barbar.nvim"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -165,7 +160,7 @@ _G.packer_plugins = {
     url = "https://github.com/stevearc/resession.nvim"
   },
   ["supermaven-nvim"] = {
-    config = { "\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0ï\2\1\0\5\0\f\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0033\4\n\0=\4\v\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\ncterm\3ô\1\21suggestion_color\f#ffffff\21ignore_filetypes\1\0\1\bcpp\2\fkeymaps\1\0\a\ncolor\0\21ignore_filetypes\0\14condition\0\14log_level\tinfo\20disable_keymaps\1\30disable_inline_completion\1\fkeymaps\0\1\0\3\16accept_word\n<C-j>\21clear_suggestion\n<C-]>\22accept_suggestion\n<Tab>\nsetup\20supermaven-nvim\frequire\0" },
+    config = { "\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0ï\2\1\0\5\0\f\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0033\4\n\0=\4\v\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\21suggestion_color\f#ffffff\ncterm\3ô\1\21ignore_filetypes\1\0\1\bcpp\2\fkeymaps\1\0\a\30disable_inline_completion\1\14condition\0\ncolor\0\20disable_keymaps\1\14log_level\tinfo\fkeymaps\0\21ignore_filetypes\0\1\0\3\16accept_word\n<C-j>\22accept_suggestion\n<Tab>\21clear_suggestion\n<C-]>\nsetup\20supermaven-nvim\frequire\0" },
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/supermaven-nvim",
     url = "https://github.com/supermaven-inc/supermaven-nvim"
@@ -190,7 +185,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: supermaven-nvim
 time([[Config for supermaven-nvim]], true)
-try_loadstring("\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0ï\2\1\0\5\0\f\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0033\4\n\0=\4\v\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\ncterm\3ô\1\21suggestion_color\f#ffffff\21ignore_filetypes\1\0\1\bcpp\2\fkeymaps\1\0\a\ncolor\0\21ignore_filetypes\0\14condition\0\14log_level\tinfo\20disable_keymaps\1\30disable_inline_completion\1\fkeymaps\0\1\0\3\16accept_word\n<C-j>\21clear_suggestion\n<C-]>\22accept_suggestion\n<Tab>\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
+try_loadstring("\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0ï\2\1\0\5\0\f\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0033\4\n\0=\4\v\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\21suggestion_color\f#ffffff\ncterm\3ô\1\21ignore_filetypes\1\0\1\bcpp\2\fkeymaps\1\0\a\30disable_inline_completion\1\14condition\0\ncolor\0\20disable_keymaps\1\14log_level\tinfo\fkeymaps\0\21ignore_filetypes\0\1\0\3\16accept_word\n<C-j>\22accept_suggestion\n<Tab>\21clear_suggestion\n<C-]>\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
 time([[Config for supermaven-nvim]], false)
 
 _G._packer.inside_compile = false
