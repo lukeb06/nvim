@@ -17,6 +17,7 @@ git clone https://github.com/lukeb06/nvim.git ~/.config/nvim --depth=1
 -   [Harpoon](https://github.com/theprimeagen/harpoon) bookmarks
 -   [Gitsigns](https://github.com/lewis6991/gitsigns.nvim) git status
 -   [LuaSnip](https://github.com/L3MON4D3/
--   [Barbar](https://github.com/romgrk/barbar.nvim) buffer navigation
 -   [Resession](https://github.com/stevearc/resession.nvim) session management
 -   [Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator) tmux navigation
+-   [WhichKey](https://github.com/folke/which-key.nvim) keymappings
+-   [LuaSnip](https://github.com/L3MON4D3/LuaSnip) snippets

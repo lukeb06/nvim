@@ -39,7 +39,6 @@ return require('packer').startup(function(use)
 
     use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
     use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
-    -- use 'romgrk/barbar.nvim'
 
     use {
         'nvim-tree/nvim-tree.lua',
@@ -57,7 +56,6 @@ return require('packer').startup(function(use)
                     clear_suggestion = "<C-]>",
                     accept_word = "<C-j>",
                 },
-                ignore_filetypes = { cpp = true }, -- or { "cpp", }
                 color = {
                     suggestion_color = "#ffffff",
                     cterm = 244,
@@ -72,15 +70,8 @@ return require('packer').startup(function(use)
         end,
     }
 
-    use {
-        'nvim-lualine/lualine.nvim',
-    }
-
-    use{
-        "stevearc/resession.nvim",
-    }
-
+    use "nvim-lualine/lualine.nvim"
+    use "stevearc/resession.nvim"
     use "christoomey/vim-tmux-navigator"
-
     use "folke/which-key.nvim"
 end)
