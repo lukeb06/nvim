@@ -47,8 +47,11 @@ vim.keymap.set("n", "<leader>jd", ":VimuxRunCommand \"docker compose up --build\
 -- Bufferline Keymaps
 --------------------------------------------------------------------------------
 
+-- ESC Fix
+vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
+
 vim.keymap.set("n", "<leader>bp", ":BufferLinePick<CR>", { desc = "Buffer Pick" })
-vim.keymap.set("n", "<C-\\>", ":BufferLineClose<CR>", { desc = "Buffer Close" })
+vim.keymap.set("n", "<leader>bd", ":BufferLineCloseOthers<CR>", { desc = "Buffer Close Others" })
 vim.keymap.set("n", "<leader>bx", ":BufferLinePickClose<CR>", { desc = "Buffer Close and Pick" })
 vim.keymap.set("n", "<C-]>", ":BufferLineCycleNext<CR>", { desc = "Buffer Cycle Next" })
 vim.keymap.set("n", "<C-[>", ":BufferLineCyclePrev<CR>", { desc = "Buffer Cycle Prev" })

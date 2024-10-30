@@ -87,4 +87,24 @@ return require('packer').startup(function(use)
             require("nvim-autopairs").setup {}
         end
     }
+
+    use({
+        "stevearc/conform.nvim",
+        config = function()
+            require("conform").setup({
+                formatters_by_ft = {
+                    markdown = { "prettierd" },
+                    html = { "prettierd" },
+                    css = { "prettierd" },
+                    javascript = { "prettierd" },
+                    typescript = { "prettierd" },
+                    json = { "prettierd" },
+                    yaml = { "prettierd" },
+                    typescriptreact = { "prettierd" },
+                    javascriptreact = { "prettierd" },
+                    liquid = { "prettierd" }
+                }
+            })
+        end,
+    })
 end)
