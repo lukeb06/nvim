@@ -180,6 +180,7 @@ ins_left {
 
 ins_left {
   'filename',
+  path = 4,
   cond = conditions.buffer_not_empty,
   color = { fg = colors.fg, gui = 'bold' },
 }

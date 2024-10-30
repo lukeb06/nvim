@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["lsp-format.nvim"] = {
+    loaded = true,
+    path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
+    url = "https://github.com/lukas-reineke/lsp-format.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -123,6 +128,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nvim-autopairs"] = {
+    config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/opt/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -165,7 +178,7 @@ _G.packer_plugins = {
     url = "https://github.com/stevearc/resession.nvim"
   },
   ["supermaven-nvim"] = {
-    config = { "\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0¼\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0033\4\b\0=\4\t\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\ncterm\3ô\1\21suggestion_color\f#ffffff\fkeymaps\1\0\6\ncolor\0\14condition\0\30disable_inline_completion\1\20disable_keymaps\1\14log_level\tinfo\fkeymaps\0\1\0\3\22accept_suggestion\n<Tab>\16accept_word\n<C-j>\21clear_suggestion\n<C-]>\nsetup\20supermaven-nvim\frequire\0" },
+    config = { "\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0¼\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0033\4\b\0=\4\t\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\21suggestion_color\f#ffffff\ncterm\3ô\1\fkeymaps\1\0\6\14log_level\tinfo\fkeymaps\0\ncolor\0\14condition\0\30disable_inline_completion\1\20disable_keymaps\1\1\0\3\22accept_suggestion\n<Tab>\21clear_suggestion\n<C-]>\16accept_word\n<C-j>\nsetup\20supermaven-nvim\frequire\0" },
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/supermaven-nvim",
     url = "https://github.com/supermaven-inc/supermaven-nvim"
@@ -200,8 +213,15 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: supermaven-nvim
 time([[Config for supermaven-nvim]], true)
-try_loadstring("\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0¼\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0033\4\b\0=\4\t\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\ncterm\3ô\1\21suggestion_color\f#ffffff\fkeymaps\1\0\6\ncolor\0\14condition\0\30disable_inline_completion\1\20disable_keymaps\1\14log_level\tinfo\fkeymaps\0\1\0\3\22accept_suggestion\n<Tab>\16accept_word\n<C-j>\21clear_suggestion\n<C-]>\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
+try_loadstring("\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0¼\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0033\4\b\0=\4\t\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\21suggestion_color\f#ffffff\ncterm\3ô\1\fkeymaps\1\0\6\14log_level\tinfo\fkeymaps\0\ncolor\0\14condition\0\30disable_inline_completion\1\20disable_keymaps\1\1\0\3\22accept_suggestion\n<Tab>\21clear_suggestion\n<C-]>\16accept_word\n<C-j>\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
 time([[Config for supermaven-nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
