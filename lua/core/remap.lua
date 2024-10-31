@@ -57,3 +57,48 @@ vim.keymap.set("n", "<C-]>", ":BufferLineCycleNext<CR>", { desc = "Buffer Cycle 
 vim.keymap.set("n", "<C-[>", ":BufferLineCyclePrev<CR>", { desc = "Buffer Cycle Prev" })
 --vim.keymap.set("n", "<C-]>", ":bnext<CR>", {desc="Buffer Next"})
 --vim.keymap.set("n", "<C-[>", ":bprev<CR>", {desc="Buffer Prev"})
+
+
+
+local last_bufnr = nil
+
+-- Update the last buffer whenever switching away from the current buffer
+vim.api.nvim_create_autocmd("BufLeave", {
+    callback = function()
+        last_bufnr = vim.fn.bufnr("%")
+    end,
+})
+
+-- Function to switch to the last visited buffer
+local function switch_to_last_buffer()
+    if last_bufnr and vim.api.nvim_buf_is_valid(last_bufnr) then
+        vim.cmd("buffer " .. last_bufnr)
+    else
+        print("No previous buffer to switch to.")
+    end
+end
+
+-- Map CTRL+Tab to call the function
+vim.keymap.set("n", "<leader>r", switch_to_last_buffer, { desc = "Switch to Last Buffer", noremap = true, silent = true })
+
+
+-- Autocommand for showing LSP signature help without moving the cursor
+vim.api.nvim_create_autocmd("TextChangedI", {
+    pattern = "*",
+    callback = function()
+        vim.defer_fn(function()
+            -- Temporarily save the cursor position
+            local win = vim.api.nvim_get_current_win()
+            local cursor_pos = vim.api.nvim_win_get_cursor(win)
+
+            -- Trigger signature help
+            vim.lsp.buf.signature_help()
+
+            -- Restore the cursor position to prevent any movement
+            if vim.api.nvim_get_current_win() == win then
+                vim.api.nvim_win_set_cursor(win, cursor_pos)
+            end
+        end, 10) -- Adjust delay as needed to prevent flickering
+    end,
+    desc = "Show signature help without moving cursor",
+})

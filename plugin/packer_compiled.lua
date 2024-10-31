@@ -95,7 +95,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["conform.nvim"] = {
-    config = { "\27LJ\2\n‚\4\0\0\5\0\26\0\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\24\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\3=\3\25\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\1\21formatters_by_ft\0\vliquid\1\2\0\0\14prettierd\20javascriptreact\1\2\0\0\14prettierd\20typescriptreact\1\2\0\0\14prettierd\tyaml\1\2\0\0\14prettierd\tjson\1\2\0\0\14prettierd\15typescript\1\2\0\0\14prettierd\15javascript\1\2\0\0\14prettierd\bcss\1\2\0\0\14prettierd\thtml\1\2\0\0\14prettierd\rmarkdown\1\0\n\15javascript\0\thtml\0\tjson\0\vliquid\0\20javascriptreact\0\rmarkdown\0\bcss\0\tyaml\0\15typescript\0\20typescriptreact\0\1\2\0\0\14prettierd\nsetup\fconform\frequire\0" },
+    config = { "\27LJ\2\n¢\4\0\0\5\0\28\0\0316\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\26\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\3=\3\27\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\1\21formatters_by_ft\0\vpython\1\2\0\0\truff\vliquid\1\2\0\0\14prettierd\20javascriptreact\1\2\0\0\14prettierd\20typescriptreact\1\2\0\0\14prettierd\tyaml\1\2\0\0\14prettierd\tjson\1\2\0\0\14prettierd\15typescript\1\2\0\0\14prettierd\15javascript\1\2\0\0\14prettierd\bcss\1\2\0\0\14prettierd\thtml\1\2\0\0\14prettierd\rmarkdown\1\0\v\vliquid\0\vpython\0\tjson\0\rmarkdown\0\thtml\0\bcss\0\15javascript\0\15typescript\0\tyaml\0\20typescriptreact\0\20javascriptreact\0\1\2\0\0\14prettierd\nsetup\fconform\frequire\0" },
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
@@ -184,7 +184,7 @@ _G.packer_plugins = {
     url = "https://github.com/stevearc/resession.nvim"
   },
   ["supermaven-nvim"] = {
-    config = { "\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0¼\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0033\4\b\0=\4\t\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\21suggestion_color\f#ffffff\ncterm\3ô\1\fkeymaps\1\0\6\30disable_inline_completion\1\14log_level\tinfo\fkeymaps\0\ncolor\0\14condition\0\20disable_keymaps\1\1\0\3\21clear_suggestion\n<C-]>\22accept_suggestion\n<Tab>\16accept_word\n<C-j>\nsetup\20supermaven-nvim\frequire\0" },
+    config = { "\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0¼\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0033\4\b\0=\4\t\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\ncterm\3ô\1\21suggestion_color\f#ffffff\fkeymaps\1\0\6\30disable_inline_completion\1\fkeymaps\0\ncolor\0\14condition\0\20disable_keymaps\1\14log_level\tinfo\1\0\3\22accept_suggestion\n<Tab>\21clear_suggestion\n<C-]>\16accept_word\n<C-j>\nsetup\20supermaven-nvim\frequire\0" },
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/supermaven-nvim",
     url = "https://github.com/supermaven-inc/supermaven-nvim"
@@ -219,11 +219,11 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: supermaven-nvim
 time([[Config for supermaven-nvim]], true)
-try_loadstring("\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0¼\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0033\4\b\0=\4\t\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\21suggestion_color\f#ffffff\ncterm\3ô\1\fkeymaps\1\0\6\30disable_inline_completion\1\14log_level\tinfo\fkeymaps\0\ncolor\0\14condition\0\20disable_keymaps\1\1\0\3\21clear_suggestion\n<C-]>\22accept_suggestion\n<Tab>\16accept_word\n<C-j>\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
+try_loadstring("\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0¼\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0033\4\b\0=\4\t\3>\3\1\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\ncterm\3ô\1\21suggestion_color\f#ffffff\fkeymaps\1\0\6\30disable_inline_completion\1\fkeymaps\0\ncolor\0\14condition\0\20disable_keymaps\1\14log_level\tinfo\1\0\3\22accept_suggestion\n<Tab>\21clear_suggestion\n<C-]>\16accept_word\n<C-j>\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
 time([[Config for supermaven-nvim]], false)
 -- Config for: conform.nvim
 time([[Config for conform.nvim]], true)
-try_loadstring("\27LJ\2\n‚\4\0\0\5\0\26\0\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\24\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\3=\3\25\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\1\21formatters_by_ft\0\vliquid\1\2\0\0\14prettierd\20javascriptreact\1\2\0\0\14prettierd\20typescriptreact\1\2\0\0\14prettierd\tyaml\1\2\0\0\14prettierd\tjson\1\2\0\0\14prettierd\15typescript\1\2\0\0\14prettierd\15javascript\1\2\0\0\14prettierd\bcss\1\2\0\0\14prettierd\thtml\1\2\0\0\14prettierd\rmarkdown\1\0\n\15javascript\0\thtml\0\tjson\0\vliquid\0\20javascriptreact\0\rmarkdown\0\bcss\0\tyaml\0\15typescript\0\20typescriptreact\0\1\2\0\0\14prettierd\nsetup\fconform\frequire\0", "config", "conform.nvim")
+try_loadstring("\27LJ\2\n¢\4\0\0\5\0\28\0\0316\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\26\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\3=\3\27\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\1\21formatters_by_ft\0\vpython\1\2\0\0\truff\vliquid\1\2\0\0\14prettierd\20javascriptreact\1\2\0\0\14prettierd\20typescriptreact\1\2\0\0\14prettierd\tyaml\1\2\0\0\14prettierd\tjson\1\2\0\0\14prettierd\15typescript\1\2\0\0\14prettierd\15javascript\1\2\0\0\14prettierd\bcss\1\2\0\0\14prettierd\thtml\1\2\0\0\14prettierd\rmarkdown\1\0\v\vliquid\0\vpython\0\tjson\0\rmarkdown\0\thtml\0\bcss\0\15javascript\0\15typescript\0\tyaml\0\20typescriptreact\0\20javascriptreact\0\1\2\0\0\14prettierd\nsetup\fconform\frequire\0", "config", "conform.nvim")
 time([[Config for conform.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

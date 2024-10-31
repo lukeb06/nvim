@@ -102,7 +102,8 @@ return require('packer').startup(function(use)
                     yaml = { "prettierd" },
                     typescriptreact = { "prettierd" },
                     javascriptreact = { "prettierd" },
-                    liquid = { "prettierd" }
+                    liquid = { "prettierd" },
+                    python = { "ruff" }
                 }
             })
         end,

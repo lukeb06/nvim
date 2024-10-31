@@ -41,6 +41,17 @@ require('mason-lspconfig').setup({
                     },
                     on_attach = require("lsp-format").on_attach
                 })
+            elseif server_name == 'pyright' then
+                require('lspconfig')[server_name].setup({
+                    on_attach = require("lsp-format").on_attach,
+                    settings = {
+                        python = {
+                            analysis = {
+                                typeCheckingMode = "off"
+                            }
+                        }
+                    }
+                })
             else
                 require('lspconfig')[server_name].setup({
                     on_attach = require("lsp-format").on_attach
