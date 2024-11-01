@@ -27,3 +27,4 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 -   [Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator) tmux navigation
 -   [WhichKey](https://github.com/folke/which-key.nvim) keymappings
 -   [LuaSnip](https://github.com/L3MON4D3/LuaSnip) snippets
+-   Many more...
