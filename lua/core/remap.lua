@@ -69,6 +69,7 @@ vim.api.nvim_create_autocmd("BufLeave", {
     end,
 })
 
+
 -- Function to switch to the last visited buffer
 local function switch_to_last_buffer()
     if last_bufnr and vim.api.nvim_buf_is_valid(last_bufnr) then
@@ -82,23 +83,24 @@ end
 vim.keymap.set("n", "<leader>r", switch_to_last_buffer, { desc = "Switch to Last Buffer", noremap = true, silent = true })
 
 
--- Autocommand for showing LSP signature help without moving the cursor
+local function show_signature_help()
+    local cursor_pos = vim.api.nvim_win_get_cursor(0)
+    vim.lsp.buf.signature_help()
+    vim.api.nvim_win_set_cursor(0, cursor_pos) -- Restore cursor position
+end
+
+-- Autocommand to show signature help only after specific characters
 vim.api.nvim_create_autocmd("TextChangedI", {
     pattern = "*",
     callback = function()
-        vim.defer_fn(function()
-            -- Temporarily save the cursor position
-            local win = vim.api.nvim_get_current_win()
-            local cursor_pos = vim.api.nvim_win_get_cursor(win)
+        local line = vim.api.nvim_get_current_line()
+        local col = vim.api.nvim_win_get_cursor(0)[2]
+        local char = line:sub(col, col)
 
-            -- Trigger signature help
-            vim.lsp.buf.signature_help()
-
-            -- Restore the cursor position to prevent any movement
-            if vim.api.nvim_get_current_win() == win then
-                vim.api.nvim_win_set_cursor(win, cursor_pos)
-            end
-        end, 10) -- Adjust delay as needed to prevent flickering
+        -- Trigger signature help only if the last character is '(' or ','
+        if char == "(" or char == "," then
+            show_signature_help()
+        end
     end,
-    desc = "Show signature help without moving cursor",
+    desc = "Show signature help only on specific characters",
 })
