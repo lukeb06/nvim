@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Project View" })
 
+vim.keymap.set("i", "jk", "<Esc>")
+
 -- Tree Toggle
 vim.keymap.set("n", "<leader>tt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree Toggle" })
 vim.keymap.set("n", "<leader>pt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree Toggle" })
