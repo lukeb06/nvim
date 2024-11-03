@@ -4,6 +4,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Project View" })
 
 -- Tree Toggle
 vim.keymap.set("n", "<leader>tt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree Toggle" })
+vim.keymap.set("n", "<leader>pt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree Toggle" })
 -- Tree Focus
 vim.keymap.set("n", "<leader>tf", vim.cmd.NvimTreeFindFile, { desc = "Tree Focus" })
 
