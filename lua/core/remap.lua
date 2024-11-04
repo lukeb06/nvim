@@ -46,20 +46,15 @@ vim.keymap.set("n", "<leader>jh", ":VimuxRunCommand \"python3 -m http.server 550
 vim.keymap.set("n", "<leader>jd", ":VimuxRunCommand \"docker compose up --build\" <CR>", { desc = "Docker Compose Up" })
 
 
-
--- Bufferline Keymaps
---------------------------------------------------------------------------------
-
 -- ESC Fix
 vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
 
-vim.keymap.set("n", "<leader>bp", ":BufferLinePick<CR>", { desc = "Buffer Pick" })
-vim.keymap.set("n", "<leader>bd", ":BufferLineCloseOthers<CR>", { desc = "Buffer Close Others" })
-vim.keymap.set("n", "<leader>bx", ":BufferLinePickClose<CR>", { desc = "Buffer Close and Pick" })
-vim.keymap.set("n", "<C-]>", ":BufferLineCycleNext<CR>", { desc = "Buffer Cycle Next" })
-vim.keymap.set("n", "<C-[>", ":BufferLineCyclePrev<CR>", { desc = "Buffer Cycle Prev" })
---vim.keymap.set("n", "<C-]>", ":bnext<CR>", {desc="Buffer Next"})
---vim.keymap.set("n", "<C-[>", ":bprev<CR>", {desc="Buffer Prev"})
+
+-- Diagnostics
+vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics Float" })
+
+
+
 
 
 
