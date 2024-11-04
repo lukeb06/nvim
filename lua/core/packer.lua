@@ -76,8 +76,6 @@ return require('packer').startup(function(use)
     use "folke/which-key.nvim"
     use "preservim/vimux"
 
-    -- use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
-
     use "lukas-reineke/lsp-format.nvim"
 
     use {
@@ -108,4 +106,6 @@ return require('packer').startup(function(use)
             })
         end,
     })
+
+    use 'meznaric/key-analyzer.nvim'
 end)
