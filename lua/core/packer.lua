@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'barrientosvctor/abyss.nvim',
+        'lukeb06/abyss.nvim',
         run = function()
             local status, abyss = pcall(require, 'abyss')
             if not status then return end
@@ -108,4 +108,5 @@ return require('packer').startup(function(use)
     })
 
     use 'meznaric/key-analyzer.nvim'
+    use 'ThePrimeagen/vim-be-good'
 end)
