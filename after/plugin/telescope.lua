@@ -25,3 +25,5 @@ end, { desc = 'Project Buffers' })
 
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = "Telescope Definitions" })
 vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = "Telescope References" })
+
+vim.keymap.set('n', '<leader><leader>', builtin.resume, { desc = 'Telescope Resume' })
