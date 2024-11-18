@@ -33,6 +33,8 @@ vim.keymap.set("n", "<leader>ga", vim.cmd.Gadd, { desc = "Git Add" })
 vim.keymap.set("n", "<leader>gc", vim.cmd.Gcommit, { desc = "Git Commit" })
 -- Git Push
 vim.keymap.set("n", "<leader>gp", vim.cmd.Gpush, { desc = "Git Push" })
+-- Git Blame
+vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { desc = "Git Blame" })
 
 
 

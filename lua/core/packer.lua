@@ -111,4 +111,7 @@ return require('packer').startup(function(use)
     use 'ThePrimeagen/vim-be-good'
 
     use 'onsails/lspkind.nvim'
+
+    use 'nvzone/volt'
+    use 'nvzone/minty'
 end)
