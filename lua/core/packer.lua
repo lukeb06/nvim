@@ -109,4 +109,6 @@ return require('packer').startup(function(use)
 
     use 'meznaric/key-analyzer.nvim'
     use 'ThePrimeagen/vim-be-good'
+
+    use 'onsails/lspkind.nvim'
 end)
