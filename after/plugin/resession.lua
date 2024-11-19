@@ -1,5 +1,5 @@
 local resession = require("resession")
-resession.setup({ extensions = { nvimtree = {} } })
+resession.setup({ extensions = { nvimtree = {}, aerial = {} } })
 
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
