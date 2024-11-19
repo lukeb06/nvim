@@ -55,6 +55,12 @@ vim.keymap.set('n', '<leader>pb', function()
     builtin.buffers(theme)
 end, { desc = 'Project Buffers' })
 
+vim.keymap.set('n', '<leader>pd', function()
+    local theme = clone(dropdown_theme)
+    theme.initial_mode = 'normal'
+
+    builtin.diagnostics(theme)
+end, { desc = 'Project Diagnostics' })
 
 vim.keymap.set('n', 'gd', function()
     local theme = clone(dropdown_theme)
