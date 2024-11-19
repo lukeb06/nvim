@@ -82,26 +82,3 @@ end
 
 -- Map CTRL+Tab to call the function
 vim.keymap.set("n", "<leader>r", switch_to_last_buffer, { desc = "Switch to Last Buffer", noremap = true, silent = true })
-
-
-local function show_signature_help()
-    local cursor_pos = vim.api.nvim_win_get_cursor(0)
-    vim.lsp.buf.signature_help()
-    vim.api.nvim_win_set_cursor(0, cursor_pos) -- Restore cursor position
-end
-
--- Autocommand to show signature help only after specific characters
--- vim.api.nvim_create_autocmd("TextChangedI", {
---     pattern = "*",
---     callback = function()
---         local line = vim.api.nvim_get_current_line()
---         local col = vim.api.nvim_win_get_cursor(0)[2]
---         local char = line:sub(col, col)
---
---         -- Trigger signature help only if the last character is '(' or ','
---         if char == "(" or char == "," then
---             show_signature_help()
---         end
---     end,
---     desc = "Show signature help only on specific characters",
--- })
