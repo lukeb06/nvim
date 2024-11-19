@@ -95,7 +95,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["conform.nvim"] = {
-    config = { "\27LJ\2\n¢\4\0\0\5\0\28\0\0316\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\26\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\3=\3\27\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\1\21formatters_by_ft\0\vpython\1\2\0\0\truff\vliquid\1\2\0\0\14prettierd\20javascriptreact\1\2\0\0\14prettierd\20typescriptreact\1\2\0\0\14prettierd\tyaml\1\2\0\0\14prettierd\tjson\1\2\0\0\14prettierd\15typescript\1\2\0\0\14prettierd\15javascript\1\2\0\0\14prettierd\bcss\1\2\0\0\14prettierd\thtml\1\2\0\0\14prettierd\rmarkdown\1\0\v\15typescript\0\tyaml\0\20typescriptreact\0\20javascriptreact\0\vpython\0\vliquid\0\tjson\0\rmarkdown\0\thtml\0\bcss\0\15javascript\0\1\2\0\0\14prettierd\nsetup\fconform\frequire\0" },
+    config = { "\27LJ\2\n¢\4\0\0\5\0\28\0\0316\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\26\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\3=\3\27\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\1\21formatters_by_ft\0\vpython\1\2\0\0\truff\vliquid\1\2\0\0\14prettierd\20javascriptreact\1\2\0\0\14prettierd\20typescriptreact\1\2\0\0\14prettierd\tyaml\1\2\0\0\14prettierd\tjson\1\2\0\0\14prettierd\15typescript\1\2\0\0\14prettierd\15javascript\1\2\0\0\14prettierd\bcss\1\2\0\0\14prettierd\thtml\1\2\0\0\14prettierd\rmarkdown\1\0\v\bcss\0\15javascript\0\tjson\0\tyaml\0\20typescriptreact\0\20javascriptreact\0\15typescript\0\vliquid\0\vpython\0\rmarkdown\0\thtml\0\1\2\0\0\14prettierd\nsetup\fconform\frequire\0" },
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
@@ -155,6 +155,11 @@ _G.packer_plugins = {
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/minty",
     url = "https://github.com/nvzone/minty"
   },
+  nvim = {
+    loaded = true,
+    path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = false,
@@ -188,6 +193,11 @@ _G.packer_plugins = {
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["overseer.nvim"] = {
+    loaded = true,
+    path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/overseer.nvim",
+    url = "https://github.com/stevearc/overseer.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -207,6 +217,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/supermaven-nvim",
     url = "https://github.com/supermaven-inc/supermaven-nvim"
+  },
+  ["telescope-themes"] = {
+    loaded = true,
+    path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/telescope-themes",
+    url = "https://github.com/andrew-george/telescope-themes"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -248,7 +263,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: conform.nvim
 time([[Config for conform.nvim]], true)
-try_loadstring("\27LJ\2\n¢\4\0\0\5\0\28\0\0316\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\26\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\3=\3\27\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\1\21formatters_by_ft\0\vpython\1\2\0\0\truff\vliquid\1\2\0\0\14prettierd\20javascriptreact\1\2\0\0\14prettierd\20typescriptreact\1\2\0\0\14prettierd\tyaml\1\2\0\0\14prettierd\tjson\1\2\0\0\14prettierd\15typescript\1\2\0\0\14prettierd\15javascript\1\2\0\0\14prettierd\bcss\1\2\0\0\14prettierd\thtml\1\2\0\0\14prettierd\rmarkdown\1\0\v\15typescript\0\tyaml\0\20typescriptreact\0\20javascriptreact\0\vpython\0\vliquid\0\tjson\0\rmarkdown\0\thtml\0\bcss\0\15javascript\0\1\2\0\0\14prettierd\nsetup\fconform\frequire\0", "config", "conform.nvim")
+try_loadstring("\27LJ\2\n¢\4\0\0\5\0\28\0\0316\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\26\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\3=\3\27\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\1\21formatters_by_ft\0\vpython\1\2\0\0\truff\vliquid\1\2\0\0\14prettierd\20javascriptreact\1\2\0\0\14prettierd\20typescriptreact\1\2\0\0\14prettierd\tyaml\1\2\0\0\14prettierd\tjson\1\2\0\0\14prettierd\15typescript\1\2\0\0\14prettierd\15javascript\1\2\0\0\14prettierd\bcss\1\2\0\0\14prettierd\thtml\1\2\0\0\14prettierd\rmarkdown\1\0\v\bcss\0\15javascript\0\tjson\0\tyaml\0\20typescriptreact\0\20javascriptreact\0\15typescript\0\vliquid\0\vpython\0\rmarkdown\0\thtml\0\1\2\0\0\14prettierd\nsetup\fconform\frequire\0", "config", "conform.nvim")
 time([[Config for conform.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

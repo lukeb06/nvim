@@ -97,4 +97,8 @@ return require('packer').startup(function(use)
     use 'ray-x/lsp_signature.nvim'
 
     use 'stevearc/aerial.nvim'
+
+    use 'stevearc/overseer.nvim'
+    use 'andrew-george/telescope-themes'
+    use 'catppuccin/nvim'
 end)
