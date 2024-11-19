@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/abyss.nvim",
     url = "https://github.com/lukeb06/abyss.nvim"
   },
+  ["aerial.nvim"] = {
+    loaded = true,
+    path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/aerial.nvim",
+    url = "https://github.com/stevearc/aerial.nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/lukebarrier/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",

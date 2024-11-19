@@ -95,4 +95,6 @@ return require('packer').startup(function(use)
     use 'nvzone/minty'
 
     use 'ray-x/lsp_signature.nvim'
+
+    use 'stevearc/aerial.nvim'
 end)
