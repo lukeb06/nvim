@@ -34,7 +34,7 @@ vim.keymap.set("n", "<leader>gc", vim.cmd.Gcommit, { desc = "Git Commit" })
 -- Git Push
 vim.keymap.set("n", "<leader>gp", vim.cmd.Gpush, { desc = "Git Push" })
 -- Git Blame
-vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { desc = "Git Blame" })
+vim.keymap.set("n", "<leader>gb", ":Gitsigns blame<CR>", { desc = "Git Blame" })
 
 
 
@@ -56,6 +56,7 @@ vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics Float" })
 
 
+vim.keymap.set("n", "<leader>q", ":wqa<CR>", { desc = "Save and Quit" });
 
 
 
