@@ -38,7 +38,7 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
         { name = 'buffer' },
-        { name = 'supermaven' },
+        -- { name = 'supermaven' },
     },
     snippet = {
         expand = function(args)
