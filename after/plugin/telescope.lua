@@ -70,4 +70,13 @@ vim.keymap.set('n', 'gr', function()
     builtin.lsp_references(theme)
 end, { desc = "Telescope References" })
 
+vim.keymap.set('n', '<leader>pj', function()
+    local theme = clone(dropdown_theme)
+    theme.sort_mru = true
+    theme.sort_lastused = true
+    theme.initial_mode = 'normal'
+
+    builtin.jumplist(theme)
+end, { desc = 'Telescope Jumplist' })
+
 vim.keymap.set('n', '<leader><leader>', builtin.resume, { desc = 'Telescope Resume' })
