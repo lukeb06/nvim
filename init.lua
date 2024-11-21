@@ -1,3 +1,4 @@
+require("config.lazy")
 require("core")
 
 vim.cmd('colorscheme abyss')

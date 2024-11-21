@@ -5,6 +5,18 @@ local themes = require('telescope.themes')
 
 telescope.setup({
     defaults = {
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden",
+            "--trim",
+            "--multiline",
+        },
         mappings = {
             n = {
                 ['d'] = actions.delete_buffer
