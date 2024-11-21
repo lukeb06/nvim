@@ -13,7 +13,7 @@ notify.setup({
     level = 2,
     minimum_width = 50,
     render = "simple",
-    stages = "fade",
+    stages = "fade_in_slide_out",
     time_formats = {
         notification = "%T",
         notification_history = "%FT%T"
