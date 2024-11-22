@@ -4,6 +4,8 @@
 <a href="https://dotfyle.com/lukeb06/nvim"><img src="https://dotfyle.com/lukeb06/nvim/badges/leaderkey?style=flat" /></a>
 <a href="https://dotfyle.com/lukeb06/nvim"><img src="https://dotfyle.com/lukeb06/nvim/badges/plugin-manager?style=flat" /></a>
 
+[https://dotfyle.com/lukeb06/nvim](dotfyle.com/lukeb06/nvim)
+
 
 ## Install Instructions
 
