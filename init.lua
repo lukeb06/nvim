@@ -1,8 +1,6 @@
 require("config.lazy")
 require("core")
 
-vim.cmd('colorscheme abyss')
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
