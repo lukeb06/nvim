@@ -6,7 +6,7 @@ require 'notifier'.setup {
         "nvimtree"
     },
     notify = {
-        clear_time = 1000,               -- Time in milliseconds before removing a vim.notify notification, 0 to make them sticky
+        clear_time = 0,                  -- Time in milliseconds before removing a vim.notify notification, 0 to make them sticky
         min_level = vim.log.levels.INFO, -- Minimum log level to print the notification
     },
     component_name_recall = false,       -- Whether to prefix the title of the notification by the component name

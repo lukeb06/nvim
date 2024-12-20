@@ -12,7 +12,7 @@ conform.setup({
         typescriptreact = { "prettierd" },
         javascriptreact = { "prettierd" },
         liquid = { "prettierd" },
-        python = { "ruff" }
+        python = { "ruff" },
     }
 })
 

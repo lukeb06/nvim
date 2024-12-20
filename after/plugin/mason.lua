@@ -3,7 +3,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here
     -- with the ones you want to install
-    ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright", "gopls", "html", "emmet_ls", "dockerls", "tailwindcss", "bashls", "shopify_theme_ls" },
+    ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright", "gopls", "html", "emmet_ls", "dockerls", "tailwindcss", "bashls", "shopify_theme_ls", "sqls" },
 
     handlers = {
         function(server_name)

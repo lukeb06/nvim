@@ -1,7 +1,20 @@
 local lualine = require('lualine')
 
+
+function get_background_color()
+    -- Get the Normal highlight group
+    local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
+    if hl and hl.bg then
+        -- Convert decimal to hexadecimal
+        vim.notify(string.format("#%06x", hl.bg))
+    else
+        return "none" -- No background color set
+    end
+end
+
 local colors = {
-    bg       = '#000c19',
+    bg       = '#000c18',
+    -- bg       = '#1e1e2f',
     fg       = '#bbc2cf',
     yellow   = '#ECBE7B',
     cyan     = '#008080',
@@ -102,7 +115,7 @@ ins_left {
             t = colors.red,
         }
         return { fg = mode_color[vim.fn.mode()] }
-    end,                             -- Sets highlighting of component
+    end,                               -- Sets highlighting of component
     padding = { left = 0, right = 0 }, -- We don't need space before this
 }
 
@@ -165,6 +178,13 @@ ins_left {
 }
 
 -- Add components to right sections
+
+ins_right {
+    require("noice").api.statusline.mode.get,
+    cond = require("noice").api.statusline.mode.has,
+    color = { fg = "#ff9e64" },
+}
+
 ins_right {
     'filetype',
     icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh

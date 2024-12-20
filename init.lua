@@ -34,3 +34,5 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 
 vim.opt.foldnestmax = 1
+
+vim.api.nvim_exec('set mousescroll=hor:0', true)
