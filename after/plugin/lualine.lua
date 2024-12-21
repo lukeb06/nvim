@@ -13,8 +13,8 @@ function get_background_color()
 end
 
 local colors = {
-    bg       = '#000c18',
-    -- bg       = '#1e1e2f',
+    -- bg       = '#000c18',
+    bg       = '#1e1e2f',
     fg       = '#bbc2cf',
     yellow   = '#ECBE7B',
     cyan     = '#008080',
