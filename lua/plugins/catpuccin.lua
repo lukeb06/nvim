@@ -1,1 +1,1 @@
-return { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+return { "lukeb06/nvim-catppuccin", name = "catppuccin", priority = 1000 }
