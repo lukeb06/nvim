@@ -1,5 +1,4 @@
-local lualine = require('lualine')
-
+local lualine = require("lualine")
 
 function get_background_color()
     -- Get the Normal highlight group
