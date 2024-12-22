@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Project View" })
 
 vim.keymap.set("i", "jk", "<Esc>")
@@ -46,6 +44,10 @@ vim.keymap.set("n", "<leader>jr", ":VimuxPromptCommand<CR>", { desc = "Run Comma
 vim.keymap.set("n", "<leader>jb", ":VimuxRunCommand \"bun dev\" <CR>", { desc = "Bun Dev" })
 vim.keymap.set("n", "<leader>jh", ":VimuxRunCommand \"python3 -m http.server 5500\" <CR>", { desc = "HTTP Server" })
 vim.keymap.set("n", "<leader>jd", ":VimuxRunCommand \"docker compose up --build\" <CR>", { desc = "Docker Compose Up" })
+vim.keymap.set("n", "<leader>jc", function()
+    vim.cmd(":VimuxRunCommand \"nvim ~/.config/nvim \"")
+    vim.cmd(":VimuxZoomRunner")
+end, { desc = "Edit nvim config" })
 
 
 -- ESC Fix
@@ -80,5 +82,9 @@ local function switch_to_last_buffer()
     end
 end
 
--- Map CTRL+Tab to call the function
+-- Map <leader>r to call the function
 vim.keymap.set("n", "<leader>r", switch_to_last_buffer, { desc = "Switch to Last Buffer", noremap = true, silent = true })
+
+
+-- vim.cmd(":VimuxOpenRunner")
+-- vim.cmd(":VimuxTogglePane")

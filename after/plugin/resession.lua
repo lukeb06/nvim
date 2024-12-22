@@ -13,6 +13,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 vim.api.nvim_create_autocmd("VimLeavePre", {
     callback = function()
-        resession.save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
+        if vim.fn.argc(-1) == 0 then
+            resession.save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
+        end
     end,
 })
