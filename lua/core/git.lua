@@ -1,7 +1,7 @@
 -- Register new vim command: gadd
 vim.api.nvim_create_user_command("Gadd", function(opts)
     -- Run 'git add .' in the current directory bash
-    vim.cmd(':VimuxRunCommand "git add . && git status"')
+    vim.cmd(":VimuxRunCommand \"git add . && git status\"")
 end, {
     nargs = 0,
     desc = "Add all files to git",
@@ -9,7 +9,7 @@ end, {
 -- Register new vim command: gcommit
 vim.api.nvim_create_user_command("Gcommit", function(opts)
     -- Run 'git commit -m "commit message"' in the current directory bash
-    vim.cmd(':VimuxRunCommand "git commit -m \"Update\""')
+    vim.cmd(":VimuxRunCommand \"git commit -m 'Update'\"")
 end, {
     nargs = 0,
     desc = "Commit all files to git",
@@ -17,14 +17,14 @@ end, {
 -- Register new vim command: gpush
 vim.api.nvim_create_user_command("Gpush", function(opts)
     -- Run 'git push' in the current directory bash
-    vim.cmd(':VimuxRunCommand "git add . && git status && git commit -m \"Update\" && git push"')
+    vim.cmd(":VimuxRunCommand \"git add . && git status && git commit -m 'Update' && git push\"")
 end, {
     nargs = 0,
     desc = "Push all files to git",
 })
 
 vim.api.nvim_create_user_command("Prc", function(opts)
-    vim.cmd(':VimuxRunCommand "prc"')
+    vim.cmd(":VimuxRunCommand \"prc\"")
 end, {
     nargs = 0,
     desc = "Create pull request"
