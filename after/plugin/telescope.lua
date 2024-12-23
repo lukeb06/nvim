@@ -92,6 +92,7 @@ vim.keymap.set('n', '<leader>pj', function()
     local theme = clone(dropdown_theme)
     theme.sort_mru = true
     theme.sort_lastused = true
+    theme.layout_config.width = 0.75
     theme.initial_mode = 'normal'
 
     builtin.jumplist(theme)
