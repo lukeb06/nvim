@@ -1,18 +1,10 @@
 -- Register new vim command: gadd
-vim.api.nvim_create_user_command("Gadd", function(opts)
+vim.api.nvim_create_user_command("Gstatus", function(opts)
     -- Run 'git add .' in the current directory bash
-    vim.cmd(":VimuxRunCommand \"git add . && git status\"")
+    vim.cmd(":VimuxRunCommand \"git status\"")
 end, {
     nargs = 0,
     desc = "Add all files to git",
-})
--- Register new vim command: gcommit
-vim.api.nvim_create_user_command("Gcommit", function(opts)
-    -- Run 'git commit -m "commit message"' in the current directory bash
-    vim.cmd(":VimuxRunCommand \"git commit -m 'Update'\"")
-end, {
-    nargs = 0,
-    desc = "Commit all files to git",
 })
 -- Register new vim command: gpush
 vim.api.nvim_create_user_command("Gpush", function(opts)
