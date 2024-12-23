@@ -24,11 +24,7 @@ vim.keymap.set("n", "<leader>fb", "ma?{<CR>v%=`a", { desc = "Format Block" })
 --------------------------------------------------------------------------------
 
 -- Git Status
-vim.keymap.set("n", "<leader>gs", ":!git status<CR>", { desc = "Git Status" })
--- Git Add
-vim.keymap.set("n", "<leader>ga", vim.cmd.Gadd, { desc = "Git Add" })
--- Git Commit
-vim.keymap.set("n", "<leader>gc", vim.cmd.Gcommit, { desc = "Git Commit" })
+vim.keymap.set("n", "<leader>gs", vim.cmd.Gstatus, { desc = "Git Status" })
 -- Git Push
 vim.keymap.set("n", "<leader>gp", vim.cmd.Gpush, { desc = "Git Push" })
 -- Git Blame
@@ -45,7 +41,7 @@ vim.keymap.set("n", "<leader>jb", ":VimuxRunCommand \"bun dev\" <CR>", { desc = 
 vim.keymap.set("n", "<leader>jh", ":VimuxRunCommand \"python3 -m http.server 5500\" <CR>", { desc = "HTTP Server" })
 vim.keymap.set("n", "<leader>jd", ":VimuxRunCommand \"docker compose up --build\" <CR>", { desc = "Docker Compose Up" })
 vim.keymap.set("n", "<leader>jc", function()
-    vim.cmd(":VimuxRunCommand \"nvim ~/.config/nvim \"")
+    vim.cmd(":VimuxRunCommand \"vimc\"")
     vim.cmd(":VimuxZoomRunner")
 end, { desc = "Edit nvim config" })
 
