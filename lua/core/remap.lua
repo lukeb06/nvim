@@ -49,6 +49,8 @@ vim.keymap.set("n", "<leader>jc", function()
     vim.cmd(":VimuxZoomRunner")
 end, { desc = "Edit nvim config" })
 
+vim.keymap.set("n", "<leader>jx", ":VimuxCloseRunner<CR>", { desc = "Close Vimux Pane" })
+
 
 -- ESC Fix
 vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
