@@ -3,11 +3,16 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here
     -- with the ones you want to install
-    ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright", "gopls", "html", "emmet_ls", "dockerls", "tailwindcss", "bashls", "shopify_theme_ls", "sqls" },
+    ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright", "gopls", "html", "emmet_ls", "dockerls", "tailwindcss", "bashls", "shopify_theme_ls", "sqls", "prettier", "prettierd" },
 
     handlers = {
         function(server_name)
-            if server_name == 'tailwindcss' then
+            if server_name == 'prettier' or server_name == 'prettierd' then
+                require('lspconfig')[server_name].setup({
+                    on_attach = require("lsp-format").on_attach,
+                    filetypes = { "html", "javascriptreact", "typescriptreact", "javascript", "typescript" },
+                })
+            elseif server_name == 'tailwindcss' then
                 -- File type is not 'liquid'
                 require('lspconfig')[server_name].setup({
                     on_attach = require("lsp-format").on_attach,
