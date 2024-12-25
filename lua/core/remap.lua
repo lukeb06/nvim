@@ -29,6 +29,8 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Gstatus, { desc = "Git Status" })
 vim.keymap.set("n", "<leader>gp", vim.cmd.Gpush, { desc = "Git Push" })
 -- Git Blame
 vim.keymap.set("n", "<leader>gb", ":Gitsigns blame<CR>", { desc = "Git Blame" })
+-- Git Web
+vim.keymap.set("n", "<leader>gw", vim.cmd.Gweb, { desc = "Git Web" })
 
 
 
