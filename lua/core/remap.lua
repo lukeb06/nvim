@@ -31,6 +31,8 @@ vim.keymap.set("n", "<leader>gp", vim.cmd.Gpush, { desc = "Git Push" })
 vim.keymap.set("n", "<leader>gb", ":Gitsigns blame<CR>", { desc = "Git Blame" })
 -- Git Web
 vim.keymap.set("n", "<leader>gw", vim.cmd.Gweb, { desc = "Git Web" })
+-- Git Pull Request
+vim.keymap.set("n", "<leader>gr", vim.cmd.Prc, { desc = "Git Pull Request" })
 
 
 

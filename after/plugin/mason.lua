@@ -9,7 +9,7 @@ require('mason-lspconfig').setup({
         function(server_name)
             if server_name == 'prettier' or server_name == 'prettierd' then
                 require('lspconfig')[server_name].setup({
-                    on_attach = require("lsp-format").on_attach,
+                    -- on_attach = require("lsp-format").on_attach,
                     filetypes = { "html", "javascriptreact", "typescriptreact", "javascript", "typescript" },
                 })
             elseif server_name == 'tailwindcss' then
