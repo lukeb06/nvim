@@ -9,8 +9,8 @@ require('mason-lspconfig').setup({
         function(server_name)
             if server_name == 'prettier' or server_name == 'prettierd' then
                 require('lspconfig')[server_name].setup({
-                    -- on_attach = require("lsp-format").on_attach,
-                    filetypes = { "html", "javascriptreact", "typescriptreact", "javascript", "typescript" },
+                    on_attach = require("lsp-format").on_attach,
+                    filetypes = { "html", "javascriptreact", "typescriptreact", "javascript", "typescript", "json", "markdown", "css", "yaml" },
                 })
             elseif server_name == 'tailwindcss' then
                 -- File type is not 'liquid'
