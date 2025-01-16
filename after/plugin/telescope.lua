@@ -25,7 +25,7 @@ telescope.setup({
     }
 })
 
-local dropdown_theme = themes.get_dropdown({ winblend = 10 })
+local dropdown_theme = themes.get_dropdown({ winblend = 5 })
 
 function clone(t) -- deep-copy a table
     if type(t) ~= "table" then return t end
@@ -49,7 +49,7 @@ end, { desc = 'Project Find' })
 
 vim.keymap.set('n', '<leader>ps', function()
     local theme = clone(dropdown_theme)
-    theme.layout_config.width = 0.75
+    theme.layout_config.width = 0.8
     builtin.live_grep(theme)
 end, { desc = 'Project Search (grep)' })
 
@@ -57,6 +57,12 @@ end, { desc = 'Project Search (grep)' })
 --     local theme = clone(dropdown_theme)
 --     builtin.git_files(theme)
 -- end, { desc = 'Telescope git files' })
+
+vim.keymap.set('n', '?', function()
+    local theme = clone(dropdown_theme)
+    theme.layout_config.width = 0.8
+    builtin.current_buffer_fuzzy_find(theme)
+end, { desc = 'Telescope Search Buffer' })
 
 vim.keymap.set('n', '<leader>pb', function()
     local theme = clone(dropdown_theme)
@@ -92,7 +98,7 @@ vim.keymap.set('n', '<leader>pj', function()
     local theme = clone(dropdown_theme)
     theme.sort_mru = true
     theme.sort_lastused = true
-    theme.layout_config.width = 0.75
+    theme.layout_config.width = 0.8
     theme.initial_mode = 'normal'
 
     builtin.jumplist(theme)
