@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(event)
         local opts = { buffer = event.buf }
 
-        vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+        -- vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
         -- vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
         vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
         vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
@@ -65,11 +65,11 @@ cmp.setup({
                 -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
                 -- can also be a function to dynamically calculate max width such as
                 -- menu = function() return math.floor(0.45 * vim.o.columns) end,
-                menu = 50,            -- leading text (labelDetails)
-                abbr = 50,            -- actual suggestion item
+                menu = 50,             -- leading text (labelDetails)
+                abbr = 50,             -- actual suggestion item
             },
-            ellipsis_char = '...',    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-            show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+            ellipsis_char = '...',     -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            show_labelDetails = false, -- show labelDetails in menu. Disabled by default
         })
-    }
+    },
 })

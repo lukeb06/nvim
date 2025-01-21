@@ -15,4 +15,5 @@ wk.add({
     { "<leader>s", group = "Select" },   -- group
     { "<leader>b", group = "Buffer" },   -- group
     { "<leader>j", group = "Terminal" }, -- group
+    { "<leader>h", group = "Hex" },      -- group
 })
