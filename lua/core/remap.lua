@@ -67,6 +67,8 @@ vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc 
 vim.keymap.set("n", "<leader>q", ":wqa<CR>", { desc = "Save and Quit" });
 
 
+vim.keymap.set("n", "L", "15zl", { desc = "Scroll right" })
+vim.keymap.set("n", "H", "15zh", { desc = "Scroll left" })
 
 
 local last_bufnr = nil
