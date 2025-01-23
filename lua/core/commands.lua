@@ -32,7 +32,7 @@ end, {
 
 
 
--- I like the twilight.nvim plugin, but the functionality of dim is much much better
+-- I like the twilight.nvim plugin, but the functionality of dim (from snacks.nvim) is much much better
 local dimmed = false
 vim.api.nvim_create_user_command("Twilight", function()
     if dimmed then
@@ -44,4 +44,14 @@ vim.api.nvim_create_user_command("Twilight", function()
 end, {
     nargs = 0,
     desc = "Add all files to git",
+})
+
+
+
+-- :Q to quit because I accidentally do capital sometimes
+vim.api.nvim_create_user_command("Q", function()
+    vim.cmd(":q")
+end, {
+    nargs = 0,
+    desc = "Quit"
 })
