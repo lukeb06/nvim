@@ -1,1 +1,1 @@
-return { 'ray-x/lsp_signature.nvim', event = "VeryLazy", opts = {} }
+return { 'ray-x/lsp_signature.nvim', config = true }

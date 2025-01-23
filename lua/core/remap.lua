@@ -21,15 +21,10 @@ vim.keymap.set("n", "<leader>fb", "ma?{<CR>v%=`a", { desc = "Format Block", sile
 -- Git Keymaps
 --------------------------------------------------------------------------------
 
--- Git Status
 vim.keymap.set("n", "<leader>gs", vim.cmd.Gstatus, { desc = "Git Status", silent = true })
--- Git Push
 vim.keymap.set("n", "<leader>gp", vim.cmd.Gpush, { desc = "Git Push", silent = true })
--- Git Blame
 vim.keymap.set("n", "<leader>gb", ":Gitsigns blame<CR>", { desc = "Git Blame", silent = true })
--- Git Web
 vim.keymap.set("n", "<leader>gw", vim.cmd.Gweb, { desc = "Git Web", silent = true })
--- Git Pull Request
 vim.keymap.set("n", "<leader>gr", vim.cmd.Prc, { desc = "Git Pull Request", silent = true })
 
 

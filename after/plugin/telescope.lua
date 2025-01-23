@@ -27,7 +27,7 @@ telescope.setup({
 
 local dropdown_theme = themes.get_dropdown({ winblend = 5 })
 
-function clone(t) -- deep-copy a table
+local function clone(t) -- deep-copy a table
     if type(t) ~= "table" then return t end
     local meta = getmetatable(t)
     local target = {}
