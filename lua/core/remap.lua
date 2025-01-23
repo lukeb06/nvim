@@ -46,7 +46,6 @@ vim.keymap.set("n", "<leader>jc", function()
     vim.cmd(":VimuxRunCommand \"vimc\"")
     vim.cmd(":VimuxZoomRunner")
 end, { desc = "Edit nvim config", silent = true })
-
 vim.keymap.set("n", "<leader>jx", ":VimuxCloseRunner<CR>", { desc = "Close Vimux Pane", silent = true })
 
 
@@ -58,13 +57,15 @@ vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics Float", silent = true })
 
 
+-- Save and Quit all buffers
 vim.keymap.set("n", "<leader>q", ":wqa<CR>", { desc = "Save and Quit", silent = true });
 
 
-
+-- Run Selected SQL Statement
 vim.keymap.set("v", "r", '"vy:lua require("dbee").execute(vim.fn.getreg("v"))<CR>', { desc = "Run SQL", silent = true })
 
 
+-- Horizontal Scrolling ( kitty / ghostty does not have scroll direction locking. )
 vim.keymap.set("n", "L", "15zl", { desc = "Scroll right", silent = true })
 vim.keymap.set("n", "H", "15zh", { desc = "Scroll left", silent = true })
 
@@ -72,6 +73,9 @@ vim.keymap.set("n", "H", "15zh", { desc = "Scroll left", silent = true })
 
 
 
+
+
+-- I like the twilight.nvim plugin, but the functionality of dim is much much better
 local dimmed = false
 vim.api.nvim_create_user_command("Twilight", function()
     if dimmed then
@@ -86,7 +90,15 @@ end, {
 })
 
 
+
+
+
+
+
+
 local last_bufnr = nil
+local buffer_stack = {}
+local buffer_pos = 0
 
 -- Update the last buffer whenever switching away from the current buffer
 vim.api.nvim_create_autocmd("BufLeave", {
@@ -95,6 +107,16 @@ vim.api.nvim_create_autocmd("BufLeave", {
         local buftype = vim.api.nvim_buf_get_option(bufnr, "buftype")
         if buftype ~= "nofile" then
             last_bufnr = bufnr
+            local prev_buf_len = #buffer_stack
+            for i, v in ipairs(buffer_stack) do
+                if v == bufnr then
+                    table.remove(buffer_stack, i)
+                end
+            end
+            table.insert(buffer_stack, bufnr)
+            if prev_buf_len < #buffer_stack then
+                buffer_pos = #buffer_stack
+            end
         end
     end,
 })
@@ -109,5 +131,15 @@ local function switch_to_last_buffer()
     end
 end
 
+local function cycle_buffers()
+    if buffer_pos > 1 then
+        buffer_pos = buffer_pos - 1
+        vim.cmd("buffer " .. buffer_stack[buffer_pos])
+    else
+        buffer_pos = #buffer_stack
+        vim.cmd("buffer " .. buffer_stack[buffer_pos])
+    end
+end
+
 -- Map <leader>r to call the function
-vim.keymap.set("n", "<leader>r", switch_to_last_buffer, { desc = "Switch to Last Buffer", noremap = true, silent = true })
+vim.keymap.set("n", "<Tab>", switch_to_last_buffer, { desc = "Switch to Last Buffer", noremap = true, silent = true })
