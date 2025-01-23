@@ -36,5 +36,3 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 3
 
 vim.api.nvim_exec('set mousescroll=hor:0', true)
-
-require("config.lualine")

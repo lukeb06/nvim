@@ -29,7 +29,5 @@ return {
             },
         })
 
-        vim.keymap.set("v", "r", '"vy:lua require("dbee").execute(vim.fn.getreg("v"))<CR>',
-            { desc = "Run SQL", silent = true })
     end,
 }

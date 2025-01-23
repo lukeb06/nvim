@@ -66,8 +66,29 @@ vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc 
 vim.keymap.set("n", "<leader>q", ":wqa<CR>", { desc = "Save and Quit", silent = true });
 
 
+
+vim.keymap.set("v", "r", '"vy:lua require("dbee").execute(vim.fn.getreg("v"))<CR>', { desc = "Run SQL", silent = true })
+
+
 vim.keymap.set("n", "L", "15zl", { desc = "Scroll right", silent = true })
 vim.keymap.set("n", "H", "15zh", { desc = "Scroll left", silent = true })
+
+
+
+
+
+local dimmed = false
+vim.api.nvim_create_user_command("Twilight", function()
+    if dimmed then
+        require('snacks').dim.disable()
+    else
+        require('snacks').dim.enable()
+    end
+    dimmed = not dimmed
+end, {
+    nargs = 0,
+    desc = "Add all files to git",
+})
 
 
 local last_bufnr = nil
