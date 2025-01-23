@@ -1,3 +1,3 @@
 require("core.remap")
-require("core.git")
+require("core.commands")
 require("current-theme")

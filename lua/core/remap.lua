@@ -7,15 +7,17 @@ vim.keymap.set("n", "<leader>tt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree
 vim.keymap.set("n", "<leader>pt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree Toggle", silent = true })
 
 -- Select All
-vim.keymap.set("n", "<leader>sa", "gg_vGg_", { desc = "Select All", silent = true })
+vim.keymap.set("n", "<leader>ts", "gg_vGg_", { desc = "Select All", silent = true })
 -- Yank All
-vim.keymap.set("n", "<leader>ya", "magg_vGg_y`a", { desc = "Yank All", silent = true })
+vim.keymap.set("n", "<leader>ty", "magg_vGg_y`a", { desc = "Yank All", silent = true })
+-- Clipboard All
+vim.keymap.set("n", "<leader>tc", "magg_vGg_\"+y`a", { desc = "Copy All", silent = true })
+-- Delete All
+vim.keymap.set("n", "<leader>td", "gg_vGg_d", { desc = "Delete All", silent = true })
+
+
 -- Format All
 vim.keymap.set("n", "<leader>fa", "magg=G`a", { desc = "Format All", silent = true })
--- Clipboard All
-vim.keymap.set("n", "<leader>ca", "magg_vGg_\"+y`a", { desc = "Copy All", silent = true })
--- Format Block
-vim.keymap.set("n", "<leader>fb", "ma?{<CR>v%=`a", { desc = "Format Block", silent = true })
 
 --------------------------------------------------------------------------------
 -- Git Keymaps
@@ -34,18 +36,14 @@ vim.keymap.set("n", "<leader>gr", vim.cmd.Prc, { desc = "Git Pull Request", sile
 
 vim.keymap.set("n", "<leader>jv", ":VimuxOpenRunner<CR>", { desc = "Open Vimux Pane", silent = true })
 vim.keymap.set("n", "<leader>jr", ":VimuxPromptCommand<CR>", { desc = "Run Command", silent = true })
-vim.keymap.set("n", "<leader>jb", ":VimuxRunCommand \"bun dev\" <CR>", { desc = "Bun Dev", silent = true })
+vim.keymap.set("n", "<leader>jbd", ":VimuxRunCommand \"bun dev\" <CR>", { desc = "Bun Dev", silent = true })
 vim.keymap.set("n", "<leader>jj", ":VimuxTogglePane<CR>", { desc = "Toggle Vimux Pane", silent = true })
 vim.keymap.set("n", "<leader>jh", function()
     vim.cmd(":VimuxRunCommand \"python3 -m http.server 5500\"")
     vim.cmd(":!open http://localhost:5500")
 end, { desc = "HTTP Server", silent = true })
-vim.keymap.set("n", "<leader>jd", ":VimuxRunCommand \"docker compose up --build\" <CR>",
+vim.keymap.set("n", "<leader>jdc", ":VimuxRunCommand \"docker compose up --build\" <CR>",
     { desc = "Docker Compose Up", silent = true })
-vim.keymap.set("n", "<leader>jc", function()
-    vim.cmd(":VimuxRunCommand \"vimc\"")
-    vim.cmd(":VimuxZoomRunner")
-end, { desc = "Edit nvim config", silent = true })
 vim.keymap.set("n", "<leader>jx", ":VimuxCloseRunner<CR>", { desc = "Close Vimux Pane", silent = true })
 
 
@@ -73,32 +71,9 @@ vim.keymap.set("n", "H", "15zh", { desc = "Scroll left", silent = true })
 
 
 
-
-
--- I like the twilight.nvim plugin, but the functionality of dim is much much better
-local dimmed = false
-vim.api.nvim_create_user_command("Twilight", function()
-    if dimmed then
-        require('snacks').dim.disable()
-    else
-        require('snacks').dim.enable()
-    end
-    dimmed = not dimmed
-end, {
-    nargs = 0,
-    desc = "Add all files to git",
-})
-
-
-
-
-
-
-
-
 local last_bufnr = nil
-local buffer_stack = {}
-local buffer_pos = 0
+-- local buffer_stack = {}
+-- local buffer_pos = 0
 
 -- Update the last buffer whenever switching away from the current buffer
 vim.api.nvim_create_autocmd("BufLeave", {
@@ -107,16 +82,16 @@ vim.api.nvim_create_autocmd("BufLeave", {
         local buftype = vim.api.nvim_buf_get_option(bufnr, "buftype")
         if buftype ~= "nofile" then
             last_bufnr = bufnr
-            local prev_buf_len = #buffer_stack
-            for i, v in ipairs(buffer_stack) do
-                if v == bufnr then
-                    table.remove(buffer_stack, i)
-                end
-            end
-            table.insert(buffer_stack, bufnr)
-            if prev_buf_len < #buffer_stack then
-                buffer_pos = #buffer_stack
-            end
+            -- local prev_buf_len = #buffer_stack
+            -- for i, v in ipairs(buffer_stack) do
+            --     if v == bufnr then
+            --         table.remove(buffer_stack, i)
+            --     end
+            -- end
+            -- table.insert(buffer_stack, bufnr)
+            -- if prev_buf_len < #buffer_stack then
+            --     buffer_pos = #buffer_stack
+            -- end
         end
     end,
 })
@@ -131,15 +106,14 @@ local function switch_to_last_buffer()
     end
 end
 
-local function cycle_buffers()
-    if buffer_pos > 1 then
-        buffer_pos = buffer_pos - 1
-        vim.cmd("buffer " .. buffer_stack[buffer_pos])
-    else
-        buffer_pos = #buffer_stack
-        vim.cmd("buffer " .. buffer_stack[buffer_pos])
-    end
-end
+-- local function cycle_buffers()
+--     if buffer_pos > 1 then
+--         buffer_pos = buffer_pos - 1
+--         vim.cmd("buffer " .. buffer_stack[buffer_pos])
+--     else
+--         buffer_pos = #buffer_stack
+--         vim.cmd("buffer " .. buffer_stack[buffer_pos])
+--     end
+-- end
 
--- Map <leader>r to call the function
 vim.keymap.set("n", "<Tab>", switch_to_last_buffer, { desc = "Switch to Last Buffer", noremap = true, silent = true })

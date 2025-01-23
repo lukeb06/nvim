@@ -9,16 +9,15 @@ return {
 
         local wk = require("which-key")
         wk.add({
-            { "<leader>g", group = "Git" }, -- group
-            { "<leader>p", group = "Project" }, -- group
-            { "<leader>t", group = "Tree" }, -- group
-            { "<leader>c", group = "Copy" }, -- group
-            { "<leader>y", group = "Yank" }, -- group
-            { "<leader>f", group = "Format" }, -- group
-            { "<leader>s", group = "Select" }, -- group
-            { "<leader>b", group = "Buffer" }, -- group
-            { "<leader>j", group = "Terminal" }, -- group
-            { "<leader>h", group = "Hex" }, -- group
+            { "<leader>g",  group = "Git" },
+            { "<leader>p",  group = "Project" },
+            { "<leader>t",  group = "Text/Tree" },
+            { "<leader>f",  group = "Format" },
+            { "<leader>b",  group = "Buffer" },
+            { "<leader>j",  group = "Terminal" },
+            { "<leader>h",  group = "Hex" },
+            { "<leader>jb", group = "Bun" },
+            { "<leader>jd", group = "Docker" },
         })
     end,
 }
