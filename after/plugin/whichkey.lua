@@ -5,7 +5,6 @@ end, { desc = "Buffer Local Keymaps (which-key)" })
 
 local wk = require("which-key")
 wk.add({
-    { "<leader>f", group = "Format" },   -- group
     { "<leader>g", group = "Git" },      -- group
     { "<leader>p", group = "Project" },  -- group
     { "<leader>t", group = "Tree" },     -- group
