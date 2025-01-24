@@ -43,7 +43,7 @@ vim.api.nvim_create_user_command("Twilight", function()
     dimmed = not dimmed
 end, {
     nargs = 0,
-    desc = "Add all files to git",
+    desc = "Toggle Twilight",
 })
 
 
