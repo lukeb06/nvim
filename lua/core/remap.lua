@@ -63,10 +63,14 @@ vim.keymap.set("n", "<leader>q", ":wqa<CR>", { desc = "Save and Quit", silent = 
 vim.keymap.set("v", "r", '"vy:lua require("dbee").execute(vim.fn.getreg("v"))<CR>', { desc = "Run SQL", silent = true })
 
 
--- Horizontal Scrolling ( kitty / ghostty does not have scroll direction locking. )
+-- Horizontal Scrolling ( kitty / ghostty does not have scroll direction locking. ( i have locked horizontal scrolling in nvim... ) )
 vim.keymap.set("n", "L", "15zl", { desc = "Scroll right", silent = true })
 vim.keymap.set("n", "H", "15zh", { desc = "Scroll left", silent = true })
 
+
+
+-- Toggle Wrap
+vim.keymap.set("n", "<leader>w", ":set wrap!<CR>", { desc = "Toggle Wrap", silent = true })
 
 
 

@@ -15,7 +15,7 @@ return {
             { "<leader>f",  group = "Format" },
             { "<leader>b",  group = "Buffer" },
             { "<leader>j",  group = "Terminal" },
-            { "<leader>h",  group = "Hex" },
+            { "<leader>h",  group = "Hex/Harpoon" },
             { "<leader>jb", group = "Bun" },
             { "<leader>jd", group = "Docker" },
         })

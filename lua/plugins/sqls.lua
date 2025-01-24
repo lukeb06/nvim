@@ -1,4 +1,1 @@
-return {
-    'nanotee/sqls.nvim',
-    options = {}
-}
+return { 'nanotee/sqls.nvim' }
