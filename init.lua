@@ -1,7 +1,7 @@
 require("config.lazy")
 require("core")
 
-vim.opt.nu = true
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
@@ -35,4 +35,4 @@ vim.opt.foldlevelstart = 99
 
 vim.opt.foldnestmax = 3
 
-vim.api.nvim_exec('set mousescroll=hor:0', true)
+vim.opt.mousescroll = "hor:0"
