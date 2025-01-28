@@ -3,27 +3,23 @@ return {
     config = function()
         local conform = require("conform")
 
-        conform.setup({
+        local opts = {
             formatters_by_ft = {
-                markdown = { "prettierd" },
-                html = { "prettierd" },
-                css = { "prettierd" },
-                javascript = { "prettierd" },
-                typescript = { "prettierd" },
-                json = { "prettierd" },
-                yaml = { "prettierd" },
-                typescriptreact = { "prettierd" },
-                javascriptreact = { "prettierd" },
-                liquid = { "prettierd" },
+                markdown = { "prettier" },
+                html = { "prettier" },
+                css = { "prettier" },
+                javascript = { "prettier" },
+                typescript = { "prettier" },
+                json = { "prettier" },
+                yaml = { "prettier" },
+                typescriptreact = { "prettier" },
+                javascriptreact = { "prettier" },
+                liquid = { "prettier" },
                 python = { "ruff" },
             }
-        })
-
-        conform.formatters.prettierd = {
-            env = {
-                prettierd_args = { "--bracket-same-line", "--single-quote", "--arrow-parens=avoid", "--tab-width=4" },
-            },
         }
+
+        conform.setup(opts)
 
         vim.keymap.set("n", "<leader>fc", conform.format, { desc = "Format with Conform" })
 
