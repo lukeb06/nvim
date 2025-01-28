@@ -11,8 +11,7 @@ return {
         wk.add({
             { "<leader>g",  group = "Git" },
             { "<leader>p",  group = "Project" },
-            { "<leader>t",  group = "Text/Tree" },
-            { "<leader>f",  group = "Format" },
+            { "<leader>t",  group = "Tree" },
             { "<leader>b",  group = "Buffer" },
             { "<leader>j",  group = "Terminal" },
             { "<leader>h",  group = "Hex/Harpoon" },

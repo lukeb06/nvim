@@ -19,9 +19,16 @@ return {
             }
         }
 
+        conform.formatters.prettier = {
+            ft_parsers = {
+                liquid = "babel",
+            }
+        }
+
         conform.setup(opts)
 
-        vim.keymap.set("n", "<leader>fc", conform.format, { desc = "Format with Conform" })
+
+        vim.keymap.set("n", "<leader>bfc", conform.format, { desc = "Format with Conform" })
 
         vim.api.nvim_create_autocmd("BufWritePre", {
             pattern = "*",
