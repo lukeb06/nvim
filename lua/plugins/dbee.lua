@@ -14,20 +14,19 @@ return {
             sources = {
                 require("dbee.sources").MemorySource:new({
                     {
-                        id = "test_sqlite",
-                        name = "Local Messenger",
-                        type = "sqlite",
-                        url = "~/repos/settlemyre-messenger/database.db",
-                    },
-                    {
                         id = "aa_11",
                         name = "AA 11",
                         type = "sqlite",
                         url = "~/aa/aa11-sequelize-search-params/server/db/dev.db"
+                    },
+                    {
+                        id = "mod_4",
+                        name = "Mod 4 Project",
+                        type = "sqlite",
+                        url = "~/aa/mod_4_project/backend/db/dev.db"
                     }
                 }),
             },
         })
-
     end,
 }
