@@ -1,6 +1,5 @@
 return {
     'IogaMaster/neocord',
-    event = "VeryLazy",
     opts = {
         logo                = "auto",     -- "auto" or url
         logo_tooltip        = nil,        -- nil or string
@@ -22,6 +21,5 @@ return {
         workspace_text      = "Working on %s",      -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
         line_number_text    = "Line %s/%s",         -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
         terminal_text       = "Using Terminal",     -- Format string rendered when in terminal mode.
-
     }
 }

@@ -24,7 +24,7 @@ return {
                         name = "Mod 4 Project",
                         type = "sqlite",
                         url = "~/aa/mod_4_project/backend/db/dev.db"
-                    }
+                    },
                 }),
             },
         })
