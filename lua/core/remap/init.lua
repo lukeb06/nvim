@@ -13,7 +13,7 @@ vim.keymap.set("n", "<leader>pt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree
 vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
 
 
--- Diagnostics
+-- EZ Diagnostics
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics Float", silent = true })
 
 
