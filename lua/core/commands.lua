@@ -1,7 +1,4 @@
-local function vimux_run_command(cmd)
-    vim.cmd(":VimuxRunCommand \"" .. cmd .. "\"")
-end
-
+require("utils.vimux")
 
 
 -- Git Commands

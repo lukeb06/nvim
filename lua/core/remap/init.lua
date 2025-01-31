@@ -1,3 +1,5 @@
+require("core.remap.terminal")
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Project View", silent = true })
 
 vim.keymap.set("i", "jk", "<Esc>")
@@ -34,44 +36,6 @@ vim.keymap.set("n", "<leader>gr", vim.cmd.Prc, { desc = "Git Pull Request", sile
 -- Terminal Keymaps
 --------------------------------------------------------------------------------
 
-local function run_vimux_command(cmd)
-    vim.cmd(":VimuxRunCommand \"" .. cmd .. "\"")
-end
-
-term_maps = {
-    { "v",  ":VimuxOpenRunner<CR>",                                        "Open Vimux Pane" },
-    { "r",  ":VimuxPromptCommand<CR>",                                     "Run Command" },
-    { "j",  ":VimuxTogglePane<CR>",                                        "Toggle Vimux Pane" },
-    { "x",  ":VimuxCloseRunner<CR>",                                       "Close Vimux Pane" },
-
-    -- Bun
-    { "bd", function() run_vimux_command("bun dev") end,                   "Bun Dev" },
-    { "bb", function() run_vimux_command("bun run build") end,             "Bun Build" },
-    { "bs", function() run_vimux_command("bun run start") end,             "Bun Start" },
-    { "bi", function() run_vimux_command("bun install") end,               "Bun Install" },
-
-    -- Node
-    { "ns", function() run_vimux_command("npm start") end,                 "Node Start" },
-    { "nb", function() run_vimux_command("npm build") end,                 "Node Build" },
-    { "ni", function() run_vimux_command("npm install") end,               "Node Install" },
-
-    -- Docker
-    { "dc", function() run_vimux_command("docker compose up --build") end, "Docker Compose" },
-
-    { "h", function()
-        run_vimux_command("python3 -m http.server 5500")
-        vim.cmd(":!open http://localhost:5500")
-    end, "HTTP Server" },
-}
-
-for _, map in ipairs(term_maps) do
-    local mode = 'n'
-    local key = '<leader>j' .. map[1]
-    local runner = map[2]
-    local desc = map[3]
-
-    vim.keymap.set(mode, key, runner, { desc = desc, silent = true })
-end
 
 --------------------------------------------------------------------------------
 
