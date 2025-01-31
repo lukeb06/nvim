@@ -42,6 +42,7 @@ term_maps = {
     { "v",  ":VimuxOpenRunner<CR>",                                        "Open Vimux Pane" },
     { "r",  ":VimuxPromptCommand<CR>",                                     "Run Command" },
     { "bd", function() run_vimux_command("bun dev") end,                   "Bun Dev" },
+    { "bb", function() run_vimux_command("bun run build") end,             "Bun Build" },
     { "j",  ":VimuxTogglePane<CR>",                                        "Toggle Vimux Pane" },
     { "dc", function() run_vimux_command("docker compose up --build") end, "Docker Compose Up" },
     { "x",  ":VimuxCloseRunner<CR>",                                       "Close Vimux Pane" },
