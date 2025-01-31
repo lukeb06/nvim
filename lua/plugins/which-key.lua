@@ -13,6 +13,7 @@ return {
             { "<leader>p",  group = "Project" },
             { "<leader>t",  group = "Tree" },
             { "<leader>b",  group = "Buffer" },
+            { "<leader>bf", group = "Format" },
             { "<leader>j",  group = "Terminal" },
             { "<leader>h",  group = "Hex/Harpoon" },
             { "<leader>jb", group = "Bun" },
