@@ -5,6 +5,7 @@ return {
 
         local opts = {
             formatters_by_ft = {
+                lua = { "stylua" },
                 markdown = { "prettier" },
                 html = { "prettier" },
                 css = { "prettier" },
@@ -16,25 +17,22 @@ return {
                 javascriptreact = { "prettier" },
                 liquid = { "prettier" },
                 python = { "ruff" },
-            }
-        }
-
-        conform.formatters.prettier = {
-            ft_parsers = {
-                liquid = "babel",
+            },
+            format_on_save = {
+                timeout_ms = 1000,
+                lsp_format = "fallback",
+            },
+            formatters = {
+                prettier = {
+                    ft_parsers = {
+                        liquid = "babel",
+                    }
+                }
             }
         }
 
         conform.setup(opts)
 
-
         vim.keymap.set("n", "<leader>bfc", conform.format, { desc = "Format with Conform" })
-
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = "*",
-            callback = function(args)
-                conform.format({ bufnr = args.buf })
-            end,
-        })
     end,
 }

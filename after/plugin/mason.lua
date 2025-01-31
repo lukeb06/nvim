@@ -1,67 +1,95 @@
-require("lsp-format").setup {}
-require('mason').setup({})
-require('mason-lspconfig').setup({
-    -- Replace the language servers listed here
-    -- with the ones you want to install
-    ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright", "gopls", "html", "emmet_ls", "dockerls", "tailwindcss", "bashls", "shopify_theme_ls", "sqls" },
+require("mason").setup({
+	ui = {
+		border = "rounded",
+		icons = {
+			package_installed = "✓",
+			package_pending = "⟳",
+			package_uninstalled = "✗",
+		},
+	},
+})
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"lua_ls",
+		"ts_ls",
+		"eslint",
+		"pyright",
+		"gopls",
+		"html",
+		"emmet_ls",
+		"dockerls",
+		"tailwindcss",
+		"bashls",
+		"shopify_theme_ls",
+		"sqls",
+	},
+	handlers = {
+		-- Default handler
+		function(server_name)
+			local server_config = {
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+				on_attach = function(client, bufnr)
+					--
+				end,
+			}
 
-    handlers = {
-        function(server_name)
-            if server_name == 'prettier' or server_name == 'prettierd' then
-                require('lspconfig')[server_name].setup({
-                    on_attach = require("lsp-format").on_attach,
-                    filetypes = { "html", "javascriptreact", "typescriptreact", "javascript", "typescript", "json", "markdown", "css", "yaml" },
-                })
-            elseif server_name == 'tailwindcss' then
-                -- File type is not 'liquid'
-                require('lspconfig')[server_name].setup({
-                    on_attach = require("lsp-format").on_attach,
-                    filetypes = { "html", "javascriptreact", "typescriptreact" },
-                })
-            elseif server_name == 'lua_ls' then
-                require('lspconfig')[server_name].setup({
-                    settings = {
-                        Lua = {
-                            runtime = {
-                                -- Tell the language server which version of Lua you're using
-                                -- (most likely LuaJIT in the case of Neovim)
-                                version = 'LuaJIT',
-                            },
-                            diagnostics = {
-                                -- Get the language server to recognize the `vim` global
-                                globals = {
-                                    'vim',
-                                    'require'
-                                },
-                            },
-                            workspace = {
-                                -- Make the server aware of Neovim runtime files
-                                library = vim.api.nvim_get_runtime_file("", true),
-                            },
-                            -- Do not send telemetry data containing a randomized but unique identifier
-                            telemetry = {
-                                enable = false,
-                            },
-                        },
-                    },
-                    on_attach = require("lsp-format").on_attach
-                })
-            elseif server_name == 'pyright' then
-                require('lspconfig')[server_name].setup({
-                    on_attach = require("lsp-format").on_attach,
-                    settings = {
-                        python = {
-                            analysis = {
-                                typeCheckingMode = "off"
-                            }
-                        }
-                    }
-                })
-            else
-                require('lspconfig')[server_name].setup({
-                    on_attach = require("lsp-format").on_attach
-                })
-            end
-        end,
-    },
+			-- Server-specific configurations
+			if server_name == "lua_ls" then
+				server_config.settings = {
+					Lua = {
+						runtime = { version = "LuaJIT" },
+						diagnostics = { globals = { "vim" } },
+						workspace = {
+							library = vim.api.nvim_get_runtime_file("", true),
+							checkThirdParty = false,
+						},
+						telemetry = { enable = false },
+					},
+				}
+			elseif server_name == "tsserver" then
+				server_config.settings = {
+					completions = { completeFunctionCalls = true },
+					javascript = { suggest = { autoImports = true } },
+					typescript = { suggest = { autoImports = true } },
+				}
+			elseif server_name == "tailwindcss" then
+				server_config.filetypes = {
+					"html",
+					"javascriptreact",
+					"typescriptreact",
+					"liquid",
+				}
+			elseif server_name == "pyright" then
+				server_config.settings = {
+					python = {
+						analysis = {
+							typeCheckingMode = "off",
+							autoSearchPaths = true,
+							useLibraryCodeForTypes = true,
+						},
+					},
+				}
+			end
+
+			require("lspconfig")[server_name].setup(server_config)
+		end,
+
+		-- Special handler for Shopify
+		["shopify_theme_ls"] = function()
+			require("lspconfig").shopify_theme_ls.setup({
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+				on_attach = function(client, bufnr)
+					client.server_capabilities.documentFormattingProvider = false
+					client.server_capabilities.documentRangeFormattingProvider = false
+				end,
+				settings = {
+					themeCheck = {
+						enabled = true,
+						autoCorrect = true,
+						liquidHTML = true,
+					},
+				},
+			})
+		end,
+	},
 })
