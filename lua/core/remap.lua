@@ -41,11 +41,23 @@ end
 term_maps = {
     { "v",  ":VimuxOpenRunner<CR>",                                        "Open Vimux Pane" },
     { "r",  ":VimuxPromptCommand<CR>",                                     "Run Command" },
+    { "j",  ":VimuxTogglePane<CR>",                                        "Toggle Vimux Pane" },
+    { "x",  ":VimuxCloseRunner<CR>",                                       "Close Vimux Pane" },
+
+    -- Bun
     { "bd", function() run_vimux_command("bun dev") end,                   "Bun Dev" },
     { "bb", function() run_vimux_command("bun run build") end,             "Bun Build" },
-    { "j",  ":VimuxTogglePane<CR>",                                        "Toggle Vimux Pane" },
-    { "dc", function() run_vimux_command("docker compose up --build") end, "Docker Compose Up" },
-    { "x",  ":VimuxCloseRunner<CR>",                                       "Close Vimux Pane" },
+    { "bs", function() run_vimux_command("bun run start") end,             "Bun Start" },
+    { "bi", function() run_vimux_command("bun install") end,               "Bun Install" },
+
+    -- Node
+    { "ns", function() run_vimux_command("npm start") end,                 "Node Start" },
+    { "nb", function() run_vimux_command("npm build") end,                 "Node Build" },
+    { "ni", function() run_vimux_command("npm install") end,               "Node Install" },
+
+    -- Docker
+    { "dc", function() run_vimux_command("docker compose up --build") end, "Docker Compose" },
+
     { "h", function()
         run_vimux_command("python3 -m http.server 5500")
         vim.cmd(":!open http://localhost:5500")
