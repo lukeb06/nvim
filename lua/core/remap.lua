@@ -34,18 +34,33 @@ vim.keymap.set("n", "<leader>gr", vim.cmd.Prc, { desc = "Git Pull Request", sile
 -- Terminal Keymaps
 --------------------------------------------------------------------------------
 
-vim.keymap.set("n", "<leader>jv", ":VimuxOpenRunner<CR>", { desc = "Open Vimux Pane", silent = true })
-vim.keymap.set("n", "<leader>jr", ":VimuxPromptCommand<CR>", { desc = "Run Command", silent = true })
-vim.keymap.set("n", "<leader>jbd", ":VimuxRunCommand \"bun dev\" <CR>", { desc = "Bun Dev", silent = true })
-vim.keymap.set("n", "<leader>jj", ":VimuxTogglePane<CR>", { desc = "Toggle Vimux Pane", silent = true })
-vim.keymap.set("n", "<leader>jh", function()
-    vim.cmd(":VimuxRunCommand \"python3 -m http.server 5500\"")
-    vim.cmd(":!open http://localhost:5500")
-end, { desc = "HTTP Server", silent = true })
-vim.keymap.set("n", "<leader>jdc", ":VimuxRunCommand \"docker compose up --build\" <CR>",
-    { desc = "Docker Compose Up", silent = true })
-vim.keymap.set("n", "<leader>jx", ":VimuxCloseRunner<CR>", { desc = "Close Vimux Pane", silent = true })
+local function run_vimux_command(cmd)
+    vim.cmd(":VimuxRunCommand \"" .. cmd .. "\"")
+end
 
+term_maps = {
+    { "v",  ":VimuxOpenRunner<CR>",                                        "Open Vimux Pane" },
+    { "r",  ":VimuxPromptCommand<CR>",                                     "Run Command" },
+    { "bd", function() run_vimux_command("bun dev") end,                   "Bun Dev" },
+    { "j",  ":VimuxTogglePane<CR>",                                        "Toggle Vimux Pane" },
+    { "dc", function() run_vimux_command("docker compose up --build") end, "Docker Compose Up" },
+    { "x",  ":VimuxCloseRunner<CR>",                                       "Close Vimux Pane" },
+    { "h", function()
+        run_vimux_command("python3 -m http.server 5500")
+        vim.cmd(":!open http://localhost:5500")
+    end, "HTTP Server" },
+}
+
+for _, map in ipairs(term_maps) do
+    local mode = 'n'
+    local key = '<leader>j' .. map[1]
+    local runner = map[2]
+    local desc = map[3]
+
+    vim.keymap.set(mode, key, runner, { desc = desc, silent = true })
+end
+
+--------------------------------------------------------------------------------
 
 -- ESC Fix
 vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
