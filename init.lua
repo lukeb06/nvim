@@ -1,6 +1,10 @@
 require("config.lazy")
 require("core")
 
+if vim.fn.filereadable(".source.lua") == 1 then
+	vim.cmd(":source .source.lua")
+end
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
