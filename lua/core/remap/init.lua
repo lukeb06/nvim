@@ -1,6 +1,7 @@
 require("core.remap.terminal")
 require("core.remap.git")
 require("core.remap.buffer")
+require("core.remap.history")
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Project View", silent = true })
 
