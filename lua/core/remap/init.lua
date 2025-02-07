@@ -5,11 +5,11 @@ require("core.remap.buffer")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Project View", silent = true })
 
 -- Tree Toggle
-vim.keymap.set("n", "<leader>tt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree Toggle", silent = true })
+-- vim.keymap.set("n", "<leader>tt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree Toggle", silent = true })
 -- vim.keymap.set("n", "<leader>pt", vim.cmd.NvimTreeFindFileToggle, { desc = "Tree Toggle", silent = true })
 --
--- vim.keymap.set("n", "<leader>tt", vim.cmd.Neotree, { desc = "Tree Toggle", silent = true })
-vim.keymap.set("n", "<leader>pt", vim.cmd.Neotree, { desc = "Tree Toggle", silent = true })
+vim.keymap.set("n", "<leader>tt", ":Neotree reveal<CR>", { desc = "Show Tree", silent = true })
+vim.keymap.set("n", "<leader>pt", ":Neotree reveal<CR>", { desc = "Project Tree", silent = true })
 
 -- ESC Fix
 vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
