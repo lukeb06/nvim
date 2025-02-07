@@ -2,6 +2,9 @@ local last_bufnr = nil
 
 local buffers = {}
 
+local forward_key = "<Tab>"
+local backward_key = "<S-Tab>"
+
 -- Update the last buffer whenever switching away from the current buffer
 vim.api.nvim_create_autocmd("BufLeave", {
 	callback = function()
@@ -91,8 +94,8 @@ local function create_menu()
 		lines = lines,
 		max_width = 20,
 		keymap = {
-			focus_next = { "j", "<Down>", "<Tab>" },
-			focus_prev = { "k", "<Up>", "<S-Tab>" },
+			focus_next = { "j", "<Down>", forward_key },
+			focus_prev = { "k", "<Up>", backward_key },
 			close = { "<Esc>", "<C-c>" },
 			submit = { "<CR>", "<Space>" },
 		},
@@ -110,6 +113,6 @@ local function create_menu()
 	vim.api.nvim_feedkeys("j", "n", false)
 end
 
-vim.keymap.set("n", "<Tab>", function()
+vim.keymap.set("n", forward_key, function()
 	create_menu()
 end, { desc = "History Menu", silent = true })
