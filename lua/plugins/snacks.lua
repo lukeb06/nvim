@@ -4,7 +4,19 @@ return {
 	lazy = false,
 	---@type snacks.Config
 	opts = {
-		bigfile = { enabled = true },
+		bigfile = {
+			notify = true,
+			size = 1.5 * 1024 * 1024, -- 1.5MB,
+			line_length = 1000, -- for minified files
+		},
+		picker = {
+			explorer = {
+				layout = {
+					position = "right",
+					preview = false,
+				},
+			},
+		},
 		dashboard = { enabled = true },
 		indent = { enabled = false },
 		input = { enabled = false },
