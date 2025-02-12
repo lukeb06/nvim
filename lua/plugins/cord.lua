@@ -5,9 +5,10 @@ return {
 		enabled = true,
 		log_level = vim.log.levels.OFF,
 		editor = {
-			client = "neovim",
+			client = "1339104412781514884",
 			tooltip = "The Superior Text Editor",
-			icon = nil,
+			-- icon = nil,
+			icon = "https://cdn.discordapp.com/app-icons/1339104412781514884/d835ecdc175353f960ad5aa2cbc125b3.png?size=32",
 		},
 		display = {
 			theme = "pastel",
