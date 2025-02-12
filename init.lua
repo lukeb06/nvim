@@ -1,7 +1,7 @@
 require("config.lazy")
 require("core")
 
-if vim.fn.filereadable(".source.lua") == 1 then
+if vim.fn.filereadable(".source.lua") == 1 and vim.fn.argc(-1) == 0 then
 	vim.cmd(":source .source.lua")
 end
 
