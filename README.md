@@ -16,6 +16,7 @@ git clone https://github.com/lukeb06/nvim.git ~/.config/nvim --depth=1
 
 ## Plugins
 
+- [lukeb06/history.nvim](https://github.com/lukeb06/history.nvim)
 - [supermaven-inc/supermaven-nvim](https://dotfyle.com/plugins/supermaven-inc/supermaven-nvim)
 - [folke/ts-comments.nvim](https://dotfyle.com/plugins/folke/ts-comments.nvim)
 - [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
