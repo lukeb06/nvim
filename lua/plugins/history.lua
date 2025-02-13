@@ -1,6 +1,6 @@
 return {
 	"lukeb06/history.nvim",
-	branch = "staging",
+	branch = "testing",
 	dependencies = { "MunifTanjim/nui.nvim" },
 	config = true,
 	opts = {
