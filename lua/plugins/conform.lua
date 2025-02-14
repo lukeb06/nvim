@@ -22,13 +22,6 @@ return {
 				timeout_ms = 1000,
 				lsp_format = "fallback",
 			},
-			-- formatters = {
-			--     prettier = {
-			--         ft_parsers = {
-			--             liquid = "babel",
-			--         }
-			--     }
-			-- }
 		}
 
 		conform.setup(opts)
