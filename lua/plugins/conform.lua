@@ -16,10 +16,10 @@ return {
 				typescriptreact = { "prettier" },
 				javascriptreact = { "prettier" },
 				liquid = { "prettier" },
-				python = { "ruff" },
+				python = { "ruff", "black" },
 			},
 			format_on_save = {
-				timeout_ms = 1000,
+				timeout_ms = 5000,
 				lsp_format = "fallback",
 			},
 		}
