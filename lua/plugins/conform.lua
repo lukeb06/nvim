@@ -19,7 +19,7 @@ return {
 				python = { "ruff", "black" },
 			},
 			format_on_save = {
-				timeout_ms = 5000,
+				timeout_ms = 1000,
 				lsp_format = "fallback",
 			},
 		}
