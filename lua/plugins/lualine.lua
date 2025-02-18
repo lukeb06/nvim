@@ -49,7 +49,7 @@ return {
 			},
 			sections = {
 				-- these are to remove the defaults
-				lualine_a = { "mode" },
+				lualine_a = {},
 				lualine_b = {},
 				lualine_y = {},
 				lualine_z = {},
