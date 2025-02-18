@@ -18,7 +18,6 @@ return {
 			{ "<leader>jb", group = "Bun" },
 			{ "<leader>jn", group = "Node" },
 			{ "<leader>jd", group = "Docker" },
-			{ "<leader>l", group = "LSP" },
 		})
 	end,
 }

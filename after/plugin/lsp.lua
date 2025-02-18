@@ -18,13 +18,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 		vim.keymap.set("n", "go", vim.lsp.buf.type_definition, opts)
-		vim.keymap.set("n", "<leader>lr", "vim.lsp.buf.rename", { desc = "Rename", silent = true, buffer = event.buf })
-		vim.keymap.set(
-			"n",
-			"<leader>la",
-			"vim.lsp.buf.code_action",
-			{ desc = "Code Action", silent = true, buffer = event.buf }
-		)
 	end,
 })
 

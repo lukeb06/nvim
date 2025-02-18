@@ -1,11 +1,11 @@
 {
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
   "aerial.nvim": { "branch": "master", "commit": "3284a2cb858ba009c79da87d5e010ccee3c99c4d" },
-  "catppuccin": { "branch": "main", "commit": "beef9b5e48dbc87a3c06780308fcb3a1e5e8bb5c" },
+  "catppuccin": { "branch": "main", "commit": "46af24e221ed3ce532b7f9c7132c4048763e40c8" },
   "cellular-automaton.nvim": { "branch": "main", "commit": "1606e9d5d04ff254023c3f3c62842d065708d6d3" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "99290b3ec1322070bcfb9e846450a46f6efa50f0" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
-  "codecompanion.nvim": { "branch": "main", "commit": "199824e89b0c459cc489d176aac60ce6c909d5a1" },
+  "codecompanion.nvim": { "branch": "main", "commit": "317737145a221c62320cf47019075aa0a65d1695" },
   "conform.nvim": { "branch": "master", "commit": "a6f5bdb78caa305496357d17e962bbc4c0b392e2" },
   "cord.nvim": { "branch": "master", "commit": "4607e07d030bdaec9a8a8ace96ebb43d1aa785d0" },
   "csvview.nvim": { "branch": "main", "commit": "545da7939fd295c4c95e606173f5d00658d66abc" },

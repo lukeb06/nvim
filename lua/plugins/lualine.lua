@@ -5,7 +5,7 @@ return {
 		local lualine = require("lualine")
 
 		local colors = {
-			-- bg       = '#181825',
+			-- bg = "#1a1a28",
 			bg = "#1e1e2f",
 			fg = "#bbc2cf",
 			yellow = "#ECBE7B",
@@ -114,7 +114,7 @@ return {
 		ins_left({
 			-- Lsp server name .
 			function()
-				local msg = "No Active Lsp"
+				local msg = "No Lsp"
 				local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
 				local clients = vim.lsp.get_active_clients()
 				if next(clients) == nil then
