@@ -13,7 +13,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 12
 
 vim.opt.smartindent = true
 
@@ -27,7 +27,7 @@ vim.opt.incsearch = true
 vim.opt.updatetime = 50
 
 vim.opt.showmode = false
-vim.opt.laststatus = 0
+-- vim.opt.laststatus = 0
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
