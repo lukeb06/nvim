@@ -51,7 +51,7 @@ local function create_menu()
 		position = "50%",
 		size = {
 			width = "50%",
-			height = "50%",
+			height = "40%",
 		},
 		border = {
 			style = "single",
@@ -87,7 +87,9 @@ local function create_menu()
 
 	-- mount the component
 	menu:mount()
+
+	vim.api.nvim_feedkeys("/", "n", false)
 end
 
-vim.keymap.set("n", "<leader><leader>", create_menu, { desc = "Create Menu", silent = true })
-vim.keymap.set("v", "<leader><leader>", create_menu, { desc = "Create Menu", silent = true })
+vim.keymap.set("n", "<leader><leader>", create_menu, { desc = "Command Pallete", silent = true })
+vim.keymap.set("v", "<leader><leader>", create_menu, { desc = "Command Pallete", silent = true })

@@ -4,31 +4,26 @@ require("core.remap.buffer")
 
 require("utils.vim")
 
-register_keymap("n", "<leader>pv", vim.cmd.Ex, "Project View")
+register_keymap("n", "<leader>pv", vim.cmd.Ex, "Show netrw")
 
-register_keymap("n", "<leader>tt", ":Neotree reveal<CR>", "Tree Toggle")
-register_keymap("n", "<leader>pt", ":Neotree reveal<CR>", "Project Tree")
+register_keymap("n", "<leader>tt", ":Neotree reveal<CR>", "Toggle Neotree")
+vim.keymap.set("n", "<leader>pt", ":Neotree reveal<CR>", { desc = "Open Neotree", silent = true })
 
 -- ESC Fix
 vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
 
--- EZ Diagnostics
 register_keymap("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", "Diagnostics Float")
 
--- Save and Quit all buffers
 register_keymap("n", "<leader>q", ":wqa<CR>", "Save and Quit")
 
--- Run Selected SQL Statement
-register_keymap("v", "r", '"vy:lua require("dbee").execute(vim.fn.getreg("v"))<CR>', "Run SQL")
+register_keymap("v", "r", '"vy:lua require("dbee").execute(vim.fn.getreg("v"))<CR>', "Run selected as SQL")
 
 -- Horizontal Scrolling ( kitty / ghostty does not have scroll direction locking. )
-register_keymap("n", "L", "15zl", "Scroll right")
-register_keymap("n", "H", "15zh", "Scroll left")
+vim.keymap.set("n", "L", "15zl")
+vim.keymap.set("n", "H", "15zh")
 
--- Toggle Wrap
 register_keymap("n", "<leader>w", ":set wrap!<CR>", "Toggle Wrap")
 
--- Move highlighted text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -36,5 +31,6 @@ vim.keymap.set("n", "J", "mzJ`z")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")

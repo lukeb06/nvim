@@ -2,10 +2,10 @@ require("utils.vimux")
 require("utils.vim")
 
 local term_maps = {
-	{ "v", ":VimuxOpenRunner<CR>", "Open Vimux Pane" },
-	{ "r", ":VimuxPromptCommand<CR>", "Run Command" },
-	{ "j", ":VimuxTogglePane<CR>", "Toggle Vimux Pane" },
-	{ "x", ":VimuxCloseRunner<CR>", "Close Vimux Pane" },
+	{ "v", ":VimuxOpenRunner<CR>", "Vimux Open" },
+	{ "r", ":VimuxPromptCommand<CR>", "Vimux Prompt" },
+	{ "j", ":VimuxTogglePane<CR>", "Vimux Toggle" },
+	{ "x", ":VimuxCloseRunner<CR>", "Vimux Close" },
 
 	-- Bun
 	{
@@ -13,28 +13,28 @@ local term_maps = {
 		function()
 			vimux_run_command("bun dev")
 		end,
-		"Bun Dev",
+		"Run bun dev",
 	},
 	{
 		"bb",
 		function()
 			vimux_run_command("bun run build")
 		end,
-		"Bun Build",
+		"Run bun build",
 	},
 	{
 		"bs",
 		function()
 			vimux_run_command("bun run start")
 		end,
-		"Bun Start",
+		"Run bun start",
 	},
 	{
 		"bi",
 		function()
 			vimux_run_command("bun install")
 		end,
-		"Bun Install",
+		"Run bun install",
 	},
 
 	-- Node
@@ -43,21 +43,21 @@ local term_maps = {
 		function()
 			vimux_run_command("npm start")
 		end,
-		"Node Start",
+		"Run npm start",
 	},
 	{
 		"nb",
 		function()
 			vimux_run_command("npm build")
 		end,
-		"Node Build",
+		"Run npm build",
 	},
 	{
 		"ni",
 		function()
 			vimux_run_command("npm install")
 		end,
-		"Node Install",
+		"Run npm install",
 	},
 
 	-- Docker
@@ -66,7 +66,7 @@ local term_maps = {
 		function()
 			vimux_run_command("docker compose up --build")
 		end,
-		"Docker Compose",
+		"Run docker compose",
 	},
 
 	{
@@ -75,7 +75,7 @@ local term_maps = {
 			vimux_run_command("python3 -m http.server 5500")
 			vim.cmd(":!open http://localhost:5500")
 		end,
-		"HTTP Server",
+		"Start HTTP Server",
 	},
 }
 
