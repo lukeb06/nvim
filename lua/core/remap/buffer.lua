@@ -1,10 +1,12 @@
+require("utils.vim")
+
 -- Select All
-vim.keymap.set("n", "<leader>bs", "gg_vGg_", { desc = "Buffer Select", silent = true })
+register_keymap("n", "<leader>bs", "gg_vGg_", "Buffer Select")
 -- Yank All
-vim.keymap.set("n", "<leader>by", "magg_vGg_y`a", { desc = "Buffer Yank", silent = true })
+register_keymap("n", "<leader>by", "magg_vGg_y`a", "Buffer Yank")
 -- Clipboard All
-vim.keymap.set("n", "<leader>bc", 'magg_vGg_"+y`a', { desc = "Buffer Copy", silent = true })
+register_keymap("n", "<leader>bc", 'magg_vGg_"+y`a', "Buffer Copy")
 -- Delete All
-vim.keymap.set("n", "<leader>bd", "gg_vGg_d", { desc = "Buffer Delete", silent = true })
+register_keymap("n", "<leader>bd", "gg_vGg_d", "Buffer Delete")
 -- Format All
-vim.keymap.set("n", "<leader>bfa", "magg=G`a", { desc = "Buffer Format", silent = true })
+register_keymap("n", "<leader>bfa", "magg=G`a", "Buffer Format")

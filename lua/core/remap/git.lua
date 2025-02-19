@@ -1,5 +1,7 @@
-vim.keymap.set("n", "<leader>gs", vim.cmd.Gstatus, { desc = "Git Status", silent = true })
-vim.keymap.set("n", "<leader>gp", vim.cmd.Gpush, { desc = "Git Push", silent = true })
-vim.keymap.set("n", "<leader>gb", ":Gitsigns blame<CR>", { desc = "Git Blame", silent = true })
-vim.keymap.set("n", "<leader>gw", vim.cmd.Gweb, { desc = "Git Web", silent = true })
-vim.keymap.set("n", "<leader>gr", vim.cmd.Prc, { desc = "Git Pull Request", silent = true })
+require("utils.vim")
+
+register_keymap("n", "<leader>gs", vim.cmd.Gstatus, "Git Status")
+register_keymap("n", "<leader>gp", vim.cmd.Gpush, "Git Push")
+register_keymap("n", "<leader>gb", ":Gitsigns blame<CR>", "Git Blame")
+register_keymap("n", "<leader>gw", vim.cmd.Gweb, "Git Web")
+register_keymap("n", "<leader>gr", vim.cmd.Prc, "Git Pull Request")

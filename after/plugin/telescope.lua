@@ -105,5 +105,3 @@ vim.keymap.set("n", "<leader>pj", function()
 
 	builtin.jumplist(theme)
 end, { desc = "Telescope Jumplist" })
-
-vim.keymap.set("n", "<leader><leader>", builtin.resume, { desc = "Telescope Resume" })
