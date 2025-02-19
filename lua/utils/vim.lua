@@ -40,7 +40,7 @@ local function create_menu()
 
 		line:append(NuiText(" ", "Comment"))
 		line:append(NuiText(action.desc, "Normal"))
-		line:append(NuiText(" ", "Comment"))
+		line:append(NuiText("  ", "Comment"))
 		line:append(NuiText(action.key, "Comment"))
 
 		local item = Menu.item(line, { cmd = action.cmd })
@@ -50,7 +50,7 @@ local function create_menu()
 	local menu = Menu({
 		position = "50%",
 		size = {
-			width = "50%",
+			width = "25%",
 			height = "40%",
 		},
 		border = {
@@ -87,8 +87,6 @@ local function create_menu()
 
 	-- mount the component
 	menu:mount()
-
-	vim.api.nvim_feedkeys("/", "n", false)
 end
 
 vim.keymap.set("n", "<leader><leader>", create_menu, { desc = "Command Pallete", silent = true })
