@@ -39,7 +39,6 @@ local function create_menu()
 		local line = NuiLine()
 
 		line:append(NuiText(" ", "Comment"))
-		-- i dont want to use normal because it removes the nui highlight, but i want the text to be white
 		line:append(NuiText(action.desc, "Normal"))
 		line:append(NuiText(" ", "Comment"))
 		line:append(NuiText(action.key, "Comment"))
