@@ -1,5 +1,12 @@
 local actions = {}
 
+-- Sort actions by description
+local function sort_actions(mode)
+	table.sort(actions[mode], function(a, b)
+		return a.desc < b.desc
+	end)
+end
+
 function register_keymap(mode, key, cmd, desc)
 	vim.keymap.set(mode, key, cmd, { desc = desc, silent = true })
 
@@ -7,15 +14,19 @@ function register_keymap(mode, key, cmd, desc)
 		actions[mode] = {}
 	end
 
-	actions[mode][key] = { cmd = cmd, desc = desc }
+	table.insert(actions[mode], { key = key, cmd = cmd, desc = desc })
+
+	sort_actions(mode)
 end
 
 local function create_menu()
 	local Menu = require("nui.menu")
+	local NuiText = require("nui.text")
+	local NuiLine = require("nui.line")
 
 	local lines = {}
 
-	local mode = vim.api.nvim_get_mode().mode
+	local mode = string.lower(vim.api.nvim_get_mode().mode)
 
 	local _actions = actions[mode]
 
@@ -25,7 +36,15 @@ local function create_menu()
 	end
 
 	for _, action in pairs(_actions) do
-		local item = Menu.item(action.desc, { cmd = action.cmd })
+		local line = NuiLine()
+
+		line:append(NuiText(" ", "Comment"))
+		-- i dont want to use normal because it removes the nui highlight, but i want the text to be white
+		line:append(NuiText(action.desc, "Normal"))
+		line:append(NuiText(" ", "Comment"))
+		line:append(NuiText(action.key, "Comment"))
+
+		local item = Menu.item(line, { cmd = action.cmd })
 		table.insert(lines, item)
 	end
 
@@ -38,7 +57,7 @@ local function create_menu()
 		border = {
 			style = "single",
 			text = {
-				top = "[history.nvim]",
+				top = "[Command Palette]",
 				top_align = "center",
 			},
 		},
@@ -49,10 +68,10 @@ local function create_menu()
 		lines = lines,
 		max_width = 20,
 		keymap = {
-			focus_next = { "j", "<Down>", "<Tab>" },
-			focus_prev = { "k", "<Up>", "<S-Tab>" },
-			close = { "<Esc>", "<C-c>" },
-			submit = { "<CR>", "<Space>" },
+			focus_next = { "j", "<Down>", "<Space>" },
+			focus_prev = { "k", "<Up>", "<S-Space>" },
+			close = { "<Esc>", "<C-c>", "q" },
+			submit = { "<CR>" },
 		},
 		on_close = function()
 			-- print("Menu Closed!")
@@ -72,3 +91,4 @@ local function create_menu()
 end
 
 vim.keymap.set("n", "<leader><leader>", create_menu, { desc = "Create Menu", silent = true })
+vim.keymap.set("v", "<leader><leader>", create_menu, { desc = "Create Menu", silent = true })
