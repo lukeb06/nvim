@@ -44,59 +44,65 @@ local function clone(t) -- deep-copy a table
 	return target
 end
 
-vim.keymap.set("n", "<leader>pf", function()
+require("utils.vim")
+
+local function set_keymap(key, func, desc)
+	register_keymap("n", key, func, desc)
+end
+
+set_keymap("<leader>pf", function()
 	local theme = clone(dropdown_theme)
 	builtin.find_files(theme)
-end, { desc = "Project Find" })
+end, "Project Find")
 
-vim.keymap.set("n", "<leader>ps", function()
+set_keymap("<leader>ps", function()
 	local theme = clone(dropdown_theme)
 	theme.layout_config.width = 0.8
 	builtin.live_grep(theme)
-end, { desc = "Project Search (grep)" })
+end, "Project Search (grep)")
 
 -- vim.keymap.set('n', '<C-p>', function()
 --     local theme = clone(dropdown_theme)
 --     builtin.git_files(theme)
 -- end, { desc = 'Telescope git files' })
 
-vim.keymap.set("n", "?", function()
+set_keymap("?", function()
 	local theme = clone(dropdown_theme)
 	theme.layout_config.width = 0.8
 	builtin.current_buffer_fuzzy_find(theme)
-end, { desc = "Telescope Search Buffer" })
+end, "Telescope Search Buffer")
 
-vim.keymap.set("n", "<leader>pb", function()
+set_keymap("<leader>pb", function()
 	local theme = clone(dropdown_theme)
 	theme.sort_mru = true
 	theme.sort_lastused = true
 	theme.initial_mode = "normal"
 
 	builtin.buffers(theme)
-end, { desc = "Project Buffers" })
+end, "Project Buffers")
 
-vim.keymap.set("n", "<leader>pd", function()
+set_keymap("<leader>pd", function()
 	local theme = clone(dropdown_theme)
 	theme.initial_mode = "normal"
 
 	builtin.diagnostics(theme)
-end, { desc = "Project Diagnostics" })
+end, "Project Diagnostics")
 
-vim.keymap.set("n", "gd", function()
+set_keymap("gd", function()
 	local theme = clone(dropdown_theme)
 	theme.initial_mode = "normal"
 
 	builtin.lsp_definitions(theme)
-end, { desc = "Telescope Definitions" })
+end, "Telescope Definitions")
 
-vim.keymap.set("n", "gr", function()
+set_keymap("gr", function()
 	local theme = clone(dropdown_theme)
 	theme.initial_mode = "normal"
 
 	builtin.lsp_references(theme)
-end, { desc = "Telescope References" })
+end, "Telescope References")
 
-vim.keymap.set("n", "<leader>pj", function()
+set_keymap("<leader>pj", function()
 	local theme = clone(dropdown_theme)
 	theme.sort_mru = true
 	theme.sort_lastused = true
@@ -104,4 +110,6 @@ vim.keymap.set("n", "<leader>pj", function()
 	theme.initial_mode = "normal"
 
 	builtin.jumplist(theme)
-end, { desc = "Telescope Jumplist" })
+end, "Telescope Jumplist")
+
+set_keymap("<leader><leader>", builtin.resume, "Telescope Resume")

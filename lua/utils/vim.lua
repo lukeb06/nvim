@@ -89,5 +89,7 @@ local function create_menu()
 	menu:mount()
 end
 
-vim.keymap.set("n", "<leader><leader>", create_menu, { desc = "Command Pallete", silent = true })
-vim.keymap.set("v", "<leader><leader>", create_menu, { desc = "Command Pallete", silent = true })
+vim.api.nvim_create_user_command("CommandPallete", create_menu, {})
+
+-- vim.keymap.set("n", "<leader><leader>", create_menu, { desc = "Command Pallete", silent = true })
+-- vim.keymap.set("v", "<leader><leader>", create_menu, { desc = "Command Pallete", silent = true })
