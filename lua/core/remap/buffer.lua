@@ -10,3 +10,5 @@ register_keymap("n", "<leader>bc", 'magg_vGg_"+y`a', "Buffer Copy All")
 register_keymap("n", "<leader>bd", "gg_vGg_d", "Buffer Delete All")
 -- Format All
 register_keymap("n", "<leader>bfa", "magg=G`a", "Buffer Format All")
+
+register_keymap("n", "<leader>br", 'mzviw"+y`z:%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>', "Buffer Replace Word")
