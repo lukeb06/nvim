@@ -7,7 +7,7 @@ local function sort_actions(mode)
 	end)
 end
 
-function register_keymap(mode, key, cmd, desc)
+local function register_keymap(mode, key, cmd, desc)
 	vim.keymap.set(mode, key, cmd, { desc = desc, silent = true })
 
 	if actions[mode] == nil then
@@ -90,6 +90,12 @@ local function create_menu()
 end
 
 vim.api.nvim_create_user_command("CommandPallete", create_menu, {})
+
+local M = {}
+
+M.register_keymap = register_keymap
+
+return M
 
 -- vim.keymap.set("n", "<leader><leader>", create_menu, { desc = "Command Pallete", silent = true })
 -- vim.keymap.set("v", "<leader><leader>", create_menu, { desc = "Command Pallete", silent = true })

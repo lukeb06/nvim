@@ -44,10 +44,10 @@ local function clone(t) -- deep-copy a table
 	return target
 end
 
-require("utils.vim")
+local vimtils = require("utils.vim")
 
 local function set_keymap(key, func, desc)
-	register_keymap("n", key, func, desc)
+	vimtils.register_keymap("n", key, func, desc)
 end
 
 set_keymap("<leader>pf", function()

@@ -1,5 +1,5 @@
 require("utils.vimux")
-require("utils.vim")
+local vimtils = require("utils.vim")
 
 local term_maps = {
 	{ "v", ":VimuxOpenRunner<CR>", "Vimux Open" },
@@ -85,5 +85,5 @@ for _, map in ipairs(term_maps) do
 	local runner = map[2]
 	local desc = map[3]
 
-	register_keymap(mode, key, runner, desc)
+	vimtils.register_keymap(mode, key, runner, desc)
 end
