@@ -1,7 +1,13 @@
 return {
-	'RaafatTurki/hex.nvim',
+	"RaafatTurki/hex.nvim",
 	config = true,
 	keys = {
-		{ "<leader>ht", function() require('hex').toggle() end, desc = "Hex Toggle" },
-	}
+		{
+			"<leader>bh",
+			function()
+				require("hex").toggle()
+			end,
+			desc = "Hex Toggle",
+		},
+	},
 }
