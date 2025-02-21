@@ -51,7 +51,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "buffer", keyword_length = 4 },
 		{ name = "path" },
-		-- { name = 'supermaven' },
+		-- { name = "supermaven" },
 	},
 	snippet = {
 		expand = function(args)
