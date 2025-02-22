@@ -8,6 +8,8 @@
 
 > Install requires Neovim 0.9+. Always review the code before installing a configuration.
 
+> NOTE: Some commands require tmux to be running and some custom commands from my [dotfiles](https://github.com/lukeb06/dotfiles)
+
 Clone the repository and install the plugins:
 
 ```sh
