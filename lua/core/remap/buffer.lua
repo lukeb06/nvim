@@ -12,3 +12,6 @@ vimtils.register_keymap("n", "<leader>bd", "gg_vGg_d", "Buffer Delete All")
 vimtils.register_keymap("n", "<leader>bfa", "magg=G`a", "Buffer Format All")
 
 vimtils.register_keymap("n", "<leader>br", 'mzviw"+y`z:%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>', "Buffer Replace Word")
+
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
