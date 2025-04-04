@@ -11,7 +11,8 @@ return {
 			icon = "https://cdn.discordapp.com/app-icons/1339104412781514884/d835ecdc175353f960ad5aa2cbc125b3.png?size=32",
 		},
 		display = {
-			theme = "pastel",
+			theme = "default",
+			flavor = "accent",
 			swap_fields = true,
 			swap_icons = false,
 		},
