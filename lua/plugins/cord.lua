@@ -6,12 +6,12 @@ return {
 		log_level = vim.log.levels.OFF,
 		editor = {
 			client = "1339104412781514884",
-			tooltip = "The Superior Text Editor",
+			tooltip = "You should consider neovim!",
 			-- icon = nil,
 			icon = "https://cdn.discordapp.com/app-icons/1339104412781514884/d835ecdc175353f960ad5aa2cbc125b3.png?size=32",
 		},
 		display = {
-			theme = "default",
+			theme = "catppuccin",
 			flavor = "accent",
 			swap_fields = true,
 			swap_icons = false,
