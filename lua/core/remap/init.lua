@@ -9,8 +9,9 @@ vimtils.register_keymap("n", "<leader>pv", vim.cmd.Ex, "Show netrw")
 vimtils.register_keymap("n", "<leader>tt", ":Neotree reveal<CR>", "Toggle Neotree")
 vim.keymap.set("n", "<leader>pt", ":Neotree reveal<CR>", { desc = "Open Neotree", silent = true })
 
--- ESC Fix
+-- ESC Fix & ENTER Fix
 vim.keymap.set("n", "<ESC>", "<NOP>", { noremap = true })
+vim.keymap.set("n", "<ENTER>", "<NOP>", { noremap = true })
 
 vimtils.register_keymap("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", "Diagnostics Float")
 
