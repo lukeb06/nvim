@@ -12,6 +12,7 @@ return {
 	config = function()
 		require("dbee").setup({
 			sources = {
+				require("dbee.sources").FileSource:new(vim.fn.stdpath("cache") .. "/dbee/persistence.json"),
 				require("dbee.sources").MemorySource:new({
 					{
 						id = "aa_11",
@@ -30,6 +31,12 @@ return {
 						name = "Mod 5 Project",
 						type = "sqlite",
 						url = "~/aa/travelly/backend/db/dev.db",
+					},
+					{
+						id = "practice",
+						name = "Practice",
+						type = "sqlite",
+						url = "~/aa/order-up/aa18-python-order-up/instance/dev.db",
 					},
 				}),
 			},
