@@ -21,3 +21,11 @@ end, {
 	nargs = 0,
 	desc = "Quit",
 })
+
+-- :W to save because I accidentally do capital sometimes
+vim.api.nvim_create_user_command("W", function()
+	vim.cmd(":w")
+end, {
+	nargs = 0,
+	desc = "Write",
+})
